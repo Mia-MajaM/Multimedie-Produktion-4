@@ -1,0 +1,87 @@
+---
+// General
+import Layout from "../../layouts/Layout.astro";
+// Astro
+import TheHeader from "../../components/Astro/TheHeader.astro";
+import TheFooter from "../../components/Astro/TheFooter.astro";
+import SvommeHero from "../../components/Astro/SvommeHero.astro";
+import WellnessComp from "../../components/Astro/WellnessComp.astro";
+import WellnessRetningComp from "../../components/Astro/WellnessRetningComp.astro";
+// VUE
+import GusTidComp from "../../components/VUE/GusTidComp.vue";
+import BackTopComp from "../../components/Astro/BackTopComp.astro";
+---
+
+<Layout
+  title="Skansen ⎮ Wellness & Relax"
+  description="Slap af i Skansens Wellness & Relax (+18). Nyd saunaer, dampbad, varme bassiner og saunagus. Familieaftener tillader børn. Perfekt frirum fra hverdagens travlhed."
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="none"
+    svomBg="#0073c3"
+    cafeBg="none"
+    eventBg="none"
+    opholdBg="none"
+    omBg="none"
+    fhDDBg="none"
+    shDDBg="none"
+    weDDBg="#0073c3"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+
+  <main>
+    <div id="hero">
+      <!-- IMG SOURCE = Gruppe 5 -->
+      <SvommeHero headingLevel="h1" headingText="Wellnes & Relax" />
+    </div>
+    <WellnessComp />
+    <div id="retningslinjer">
+      <WellnessRetningComp />
+    </div>
+    <div id="gustider">
+      <div class="content-cont">
+        <section class="flex column">
+          <h2>Saunagustider</h2>
+          <p>
+            Deltag i vores saunagus i saunaerne <strong>Kelo</strong> og <strong
+              >Panorama</strong
+            >. Ingen tilmelding nødvendig, og sessionen varer <strong
+              >15 minutter</strong
+            >. Bemærk, at saunagus kun foregår i én sauna ad gangen, selvom
+            begge saunaer kan være tændt. Hvis der er mange deltagere, afgør
+            livredderen, om vi skal dele gruppen op mellem de to saunaer.
+          </p>
+        </section>
+      </div>
+      <GusTidComp client:only="vue" />
+    </div>
+    <BackTopComp href="#hero" />
+  </main>
+
+  <TheFooter />
+</Layout>
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  main {
+    background-color: $denim;
+    #retningslinjer {
+      margin: 100px 0 100px 0;
+    }
+    #gustider {
+      background-color: $pure-white;
+      padding: 50px 10px 50px 10px;
+      .content-cont {
+        section {
+          max-width: 800px;
+          margin-bottom: 25px;
+        }
+      }
+    }
+  }
+</style>

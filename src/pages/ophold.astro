@@ -1,0 +1,283 @@
+---
+// General
+import Layout from "../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+// Astro
+import TheHeader from "../components/Astro/TheHeader.astro";
+import TheFooter from "../components/Astro/TheFooter.astro";
+import ButtonEkstern from "../components/Astro/ButtonEkstern.astro";
+import DetailImgComp from "../components/Astro/DetailImgComp.astro";
+import NavigateFurther from "../components/Astro/NavigateFurther.astro";
+import OpholdPrisComp from "../components/Astro/OpholdPrisComp.astro";
+// VUE
+import FiftyHero from "../components/VUE/FiftyHero.vue";
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import detailImg1 from "../assets/img/ophold/1privatpersoner_3084.jpg";
+// IMG SOURCE = Oplevskansen.dk
+import detailImg2 from "../assets/img/ophold/2skoleudflugt_3090.jpg";
+// IMG SOURCE = Oplevskansen.dk
+import detailImg3 from "../assets/img/ophold/3overnatning6_4212.jpg";
+// IMG SOURCE = Oplevskansen.dk
+import detailImg4 from "../assets/img/ophold/4traeningsophold_3100.jpg";
+// IMG SOURCE = Oplevskansen.dk
+import danhostelImg1 from "../assets/img/ophold/_dsc6844_4676.jpg";
+// IMG SOURCE = Oplevskansen.dk
+import danhostelImg2 from "../assets/img/ophold/image 18.png";
+// IMG SOURCE = Oplevskansen.dk
+import danhostelImg3 from "../assets/img/ophold/image 22.png";
+import BackTopComp from "../components/Astro/BackTopComp.astro";
+---
+
+<Layout
+  title="Skansen ⎮ Ophold"
+  description="Planlægger du at besøge Skansen i Nørresundby? Danhostel tilbyder komfortable værelser til 2-4 gæster. Med over 30 års erfaring tilbyder vi ideelle faciliteter til kurser, møder og konferencer."
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="none"
+    svomBg="none"
+    cafeBg="none"
+    eventBg="none"
+    opholdBg="#0073c3"
+    omBg="none"
+    fhDDBg="none"
+    shDDBg="none"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+  <main>
+    <div id="hero">
+      <!-- // IMG SOURCE = Gruppe 5 -->
+      <FiftyHero client:only="vue" />
+    </div>
+    <div id="priser" class="full-width flex align">
+      <OpholdPrisComp />
+    </div>
+    <div id="information" class="full-width flex align column information">
+      <!-- IMG SOURCE = Oplevskansen.dk -->
+      <DetailImgComp
+        h3="Familieophold"
+        image={detailImg1}
+        imageAlt="Familieophold på Danhostel Nørresundby med belligenhed på Lerumbakken 11, 9400 Nørresundby"
+        p1="Tag på et underholdende familieophold med masser af aktiviteter og afslapning hos Skansen i Nørresundby. Vi har en central beliggenhed i forhold til både Aalborg, men også i resten af Nordjylland."
+        p2=" Vi ligger tæt på centrum, lufthavnen og offentlig transport. Derudover tilbyder vi også gratis parkering."
+      />
+      <!-- IMG SOURCE = Oplevskansen.dk -->
+      <DetailImgComp
+        h3="Skoleophold"
+        image={detailImg2}
+        imageAlt="Skoleophold på Danhostel Nørresundby med belligenhed på Lerumbakken 11, 9400 Nørresundby"
+        p1="Hos Skansen i Nørresundby har vi stor erfaring med besøg af skoler, da vi rummer mange forskellige faciliteter, kan vi sammensætte et alsidigt, varieret og spændende skoleophold - altid til en god pris."
+        p2="Vi har en masse gode indendørs og udendørs faciliteter. Vi tilbyder undervisningslokaler med tilhørende teknisk udstyr. Alt bespisning vil gå igennem Skansen Restaurant, som kan lave de daglige antal måltider, der ønskes."
+      />
+      <!-- IMG SOURCE = Oplevskansen.dk -->
+      <DetailImgComp
+        h3="Firmaovernatning"
+        image={detailImg3}
+        imageAlt="Køjeseng på et af værelserne"
+        p1="Alle vores værelser har gode senge til både søvn og afslapning efter en lang arbejdsdag. Værelserne er med eget bad, toilet, TV, Wi-Fi, samt bord og stole som kan bruges til kontorplads."
+        p2="Det er også muligt at benytte centeret forskellige faciliteter. Vi har bl.a. Svømmeland med RELAX afdeling og et aktivitetsrum, hvor kollegaerne kan tage et spil sammen."
+      />
+      <!-- IMG SOURCE = Oplevskansen.dk -->
+      <DetailImgComp
+        h3="Træningsophold"
+        image={detailImg4}
+        imageAlt="Igangværende håndboldkamp i Hal 1 i Skansen"
+        p1="Skal sportsholdet på tur? Hos Nørresundby Idrætscenter byder vi på træningsophold med overnatning. "
+        p2="Vi rummer mange overnattende gæster på træningsophold fra Nordjylland, men alle sportsgrupper er naturligvis velkommen, uanset hvor i landet I kommer fra."
+      />
+      <h3>Book hos Danhostel Nørresundby</h3>
+      <ButtonEkstern
+        link={"https://www.danhostel.dk/hostel/danhostel-noerresundby"}
+        ptxt="Book ophold"
+      />
+    </div>
+    <div class="full-width" id="danhostel-info">
+      <div class="content-cont flex column">
+        <h2>Danhostel & Informationer</h2>
+        <!-- Danhostel Cont 1 -->
+        <div class="flex row align wrap">
+          <section>
+            <h3>Aktiviteter</h3>
+            <p>
+              Når du overnatter hos os får fri adgang til bad og wellness samt
+              fitness indenfor den offentlige åbningstid. Du kan også slappe af
+              i kælderens hyggelige rum. Her kan du spille bordtennis og
+              bordfodbold eller låne et brætspil i receptionen.
+            </p>
+          </section>
+          <section>
+            <h3>Egen mad</h3>
+            <p>
+              Der er mulighed for at benytte vores fælleskøkken på gangen.
+              Køkkenet er udstyret med ovn og komfur, gryder og alt hvad du skal
+              bruge, det eneste vi beder om er, at du husker at rengøre og rydde
+              op efter dig selv. Her kan I også opbevare mad og lignende i
+              køleskabet.
+            </p>
+          </section>
+          <div class="img-cont">
+            <Picture
+              src={danhostelImg1}
+              alt="Lav mad under dit ophold på Danhostel Nørresundby"
+              class="img"
+            />
+          </div>
+        </div>
+        <!-- Danhostel Cont 1 -->
+        <!-- Danhostel Cont 2 -->
+        <div class="flex row align wrap">
+          <div class="img-cont">
+            <Picture
+              src={danhostelImg2}
+              alt="Opholdsområde med mulighed for bordfodbold og bordtennis under dit ophold på Danhostel Nørresundby"
+              class="img"
+            />
+          </div>
+          <section>
+            <h3>Kæledyrs- og rygepolitik</h3>
+            <p>
+              Det er tilladt at medbringe renlige kæledyr under et familieophold
+              hos os, så hele familien har mulighed for at være samlet. Der vil
+              dog være et rengøringstillæg på 150 kr. pr. kæledyr. Rygning af
+              tilladt udenfor.
+            </p>
+          </section>
+          <section>
+            <h3>Morgenmad</h3>
+            <p>
+              Mod et tillægsgebyr på <strong>30 kr. for børn</strong> i alderen 3-7
+              år og 60 kr. for børn over 7 år samt voksne tilbyder vi også morgenmad.
+              Dette skal dog bestilles senest dagen inden kl. 15.
+            </p>
+          </section>
+        </div>
+        <!-- Danhostel Cont 2 -->
+        <!-- Danhostel Cont 3 -->
+        <div class="flex row align wrap">
+          <section>
+            <h3>Nærområdet</h3>
+            <p>
+              Danhostel Nørresundby Skansen er placeret på toppen af
+              Nørresundby, tæt på flere kulturhistoriske aktiviteter. Besøg for
+              eksempel Lindholm Høje, Nørresundbys helt eget vikingemuseum eller
+              tag på byvandring via Aalborg bymuseum.
+            </p>
+          </section>
+          <section>
+            <h3>Praktiske oplysnigner</h3>
+            <p>
+              Afbestilling af overnatning skal ske senest 2 hverdage inden
+              ankomst. Alle værelser er inklusiv toilet/bad og linnedpakke med
+              håndklæder. Der er fri parkering lige ved centeret.
+            </p>
+          </section>
+          <div class="img-cont">
+            <Picture
+              src={danhostelImg3}
+              alt="Udsyn på et af værelserne på Danhostel Nørresundby"
+              class="img"
+            />
+          </div>
+        </div>
+        <!-- Danhostel Cont 3 -->
+      </div>
+    </div>
+    <NavigateFurther />
+    <BackTopComp href="#hero" />
+  </main>
+  <TheFooter />
+</Layout>
+
+<style lang="scss">
+  @import "../css/style.scss";
+
+  main {
+    #priser {
+      padding: 5% 2% 5% 2%;
+    }
+    .information {
+      row-gap: 40px;
+      padding: 5% 2% 5% 2%;
+      background-color: $denim;
+      h3 {
+        color: $pure-white;
+      }
+    }
+    #danhostel-info {
+      background-color: $champagne;
+      .content-cont {
+        padding: 50px 0 50px 0;
+        row-gap: 50px;
+        .align {
+          background-color: $pure-white;
+          section {
+            width: 33%;
+            padding: 2%;
+            p {
+              margin-top: 25px;
+            }
+          }
+          .img-cont {
+            width: 33%;
+            height: 100%;
+            padding: 5px;
+            .img {
+              width: 100%;
+              max-width: 460px;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    main {
+      #danhostel-info {
+        .content-cont {
+          .align {
+            &:nth-child(3) {
+              flex-wrap: wrap-reverse;
+            }
+            section {
+              width: 48%;
+              min-width: 250px;
+              padding: 2%;
+            }
+            .img-cont {
+              width: 48%;
+              height: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    main {
+      #danhostel-info {
+        .content-cont {
+          .align {
+            section {
+              width: 90%;
+              min-width: 250px;
+              padding: 2%;
+            }
+            .img-cont {
+              width: 100%;
+              height: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,233 @@
+---
+import { Picture } from "astro:assets";
+interface Props<Y> {
+  img1: Y;
+  img2: Y;
+  alt1: string;
+  alt2: string;
+}
+const { img1, img2, alt1, alt2 } = Astro.props;
+
+import AabningComp from "../VUE/AabningComp.vue";
+import ButtonEkstern from "./ButtonEkstern.astro";
+---
+
+<!-- Container Start -->
+<div
+  class="cont flex row"
+  role="region"
+  aria-label="Babysvømning og fitnessinformation"
+>
+  <!-- Left -->
+  <div class="flex column left">
+    <div class="flex align txt-box">
+      <section class="flex column">
+        <h3>Babysvømning</h3>
+        <p>
+          I Skansen har vi mange babysvømmehold om ugen. Babysvømning er for
+          børn op til 2 år.
+        </p>
+        <p>
+          Næste holdstart er efter sommerferien i uge 32, 2024, tilmelding åbner
+          allerede torsdag d. 30. maj kl. 14.00
+        </p>
+        <p>Tilmeld jer her:</p>
+        <ButtonEkstern
+          link={"https://shop.compuapp.dk/norresun/booking"}
+          ptxt="Book Her"
+        />
+      </section>
+    </div>
+    <div class="img-cont">
+      <Picture
+        src={img1}
+        alt={alt1}
+        formats={["avif", "webp", "png"]}
+        class="img"
+      />
+    </div>
+  </div>
+  <!-- Left -->
+
+  <!-- Mid -->
+  <div class="flex column align mid" aria-hidden="true">
+    <AabningComp client:only="vue" />
+  </div>
+  <!-- AAbning -->
+
+  <!-- Right -->
+  <div class="flex column right">
+    <div class="img-cont">
+      <Picture
+        src={img2}
+        alt={alt2}
+        formats={["avif", "webp", "png"]}
+        class="img"
+      />
+    </div>
+
+    <div class="flex align txt-box">
+      <section class="flex column">
+        <p>
+          Skansen Bad & Wellness tilbyder en omfattende oase af vandaktiviteter
+          og velværeoplevelser for hele familien. Beliggende kun 1,8 kilometer
+          fra Aalborg Centrum i Nørresundby, er vores svømmehal det perfekte
+          tilflugtssted for både legesyge børn og voksne på jagt efter
+          afslapning.
+        </p>
+        <p>
+          Med et bredt udvalg af aktiviteter, herunder svømning, wellness og
+          holdtræning, er der noget for enhver smag. Vores svømmehal er ikke
+          blot et sted for rekreation, men også et sted, hvor familier kan fejre
+          særlige lejligheder som børnefødselsdage med uforglemmelige
+          vandlandseventyr.
+        </p>
+      </section>
+    </div>
+  </div>
+  <!-- Right -->
+</div>
+<!-- Container End -->
+
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  .cont {
+    width: 100%;
+    gap: 20px;
+    padding: 45px 0 45px 0;
+
+    justify-content: center;
+    .left,
+    .right {
+      gap: 2%;
+      max-width: 450px;
+
+      .txt-box {
+        background-color: $pure-white;
+        border-radius: $box-border-section;
+        padding: 25px;
+        height: 60%;
+        min-height: 60%;
+        section {
+          outline: solid 2px $denim;
+          border-radius: $box-border-element;
+          padding: 5%;
+          max-height: 100%;
+          height: -webkit-fit-content;
+          p {
+            &:nth-child(2),
+            &:nth-child(3) {
+              margin-top: 20px;
+            }
+            &:nth-child(4) {
+              padding-bottom: 10px;
+            }
+          }
+          ul {
+            list-style-type: disc;
+            list-style-position: inside;
+            row-gap: 20px;
+          }
+        }
+      }
+    }
+
+    .mid {
+      outline: solid 5px $pure-white;
+      border-radius: 30px;
+    }
+    .img-cont {
+      min-width: 300px;
+      max-height: 100%;
+      min-height: 40%;
+      background-color: $pure-white;
+      border: solid 10px $pure-white;
+      border-radius: $box-border-section;
+      .img {
+        border-radius: $box-border-section;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  @media (max-width: 1550px) {
+    .cont {
+      .left {
+        width: 100%;
+        height: 100%;
+        row-gap: 25px;
+
+        .txt-box {
+          height: 40%;
+          section {
+            row-gap: 10px;
+            padding: 25px;
+            font-size: $font-p-small;
+            ul {
+              row-gap: 10px;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1250px) {
+    .cont {
+      flex-direction: column;
+      .txt-box {
+        padding: 2%;
+      }
+
+      .mid {
+        width: 50%;
+        align-self: center;
+      }
+      .left,
+      .right {
+        flex-direction: row;
+        margin: 0 auto;
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+  @media (max-width: 950px) {
+    .cont {
+      flex-direction: column;
+
+      .txt-box {
+        padding: 2%;
+      }
+      .mid {
+        width: 50%;
+      }
+      .left,
+      .right {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .cont {
+      .left,
+      .right {
+        flex-direction: column;
+        margin-bottom: 20px;
+        gap: 25px;
+        .txt-box {
+          section {
+            padding: 25px;
+          }
+        }
+      }
+      .mid {
+        width: 80%;
+      }
+    }
+  }
+</style>

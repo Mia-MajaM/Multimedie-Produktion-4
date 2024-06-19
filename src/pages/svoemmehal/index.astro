@@ -1,0 +1,297 @@
+---
+// GENERAL
+import Layout from "../../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+// ASTRO
+import TheFooter from "../../components/Astro/TheFooter.astro";
+import TheHeader from "../../components/Astro/TheHeader.astro";
+import SvommeHero from "../../components/Astro/SvommeHero.astro";
+import ButtonIntern from "../../components/Astro/ButtonIntern.astro";
+import BackTopComp from "../../components/Astro/BackTopComp.astro";
+// VUE
+import FiftyHero from "../../components/VUE/FiftyHero.vue";
+import ShapeSection from "../../components/Astro/ShapeSectionSvomme.astro";
+import MedlemSectionSvom from "../../components/VUE/MedlemSectionSvom.vue";
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import img1 from "../../assets/img/svommehal/bassin_4668.jpg";
+// IMG SOURCE = Oplevskansen.dk
+import img2 from "../../assets/img/svommehal/img_9129_887.jpg";
+// IMG SOURCE = Oplevskansen.dk
+import img3 from "../../assets/img/svommehal/image 2.png";
+---
+
+<Layout
+  title="Skansen ⎮ Svømmehal"
+  description="Udforsk vores svømmefaciliteter, fejre børnefødselsdage i vandlandet, eller slap af i terapibassinet og wellness & relax området."
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="none"
+    svomBg="#0073c3"
+    cafeBg="none"
+    eventBg="none"
+    opholdBg="none"
+    omBg="none"
+    fhDDBg="none"
+    shDDBg="none"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+
+  <main>
+    <div id="hero">
+      <!-- IMG SOURCE = Oplevskansen.dk -->
+      <FiftyHero client:only="vue" />
+    </div>
+    <div class="main-relative flex column">
+      <SvommeHero headingLevel="h2" headingText="Wellness- og relaxområdet" />
+      <div class="content-cont">
+        <ShapeSection
+          alt1="Skansens svømmehals 50 meter bassin med 8 baner"
+          img1={img1}
+          img2={img2}
+          alt2="Vandaerobic i Skansens Fun-afdeling"
+        />
+      </div>
+      <div class="content-cont arrangement flex wrap row">
+        <div class="img-cont flex">
+          <Picture
+            alt="Person binder snørrebånd med plakat af Skansen i baggrunden"
+            src={img3}
+            class="img"
+          />
+        </div>
+        <section class="flex column">
+          <h3>Arrangement i Skansen?</h3>
+          <p>
+            Vi tilbyder forskellige arrangementer i Skansen. Så skal du afholde
+            polterabend, har vi de perfekte rammer til afslapning og udfordring.
+          </p>
+          <p>
+            Er du derimod mere til et adrenalinkick, så tøv ikke med at
+            planlægge et arrangement med svævebane som tema. Planlægger I et
+            firmaarrangement, så er Skansen det perfekte sted til unik træning
+            og afslapning.
+          </p>
+          <div class="flex row">
+            <ButtonIntern href="/event-arrangement" p="Book Arrangement" />
+          </div>
+        </section>
+      </div>
+      <div id="priser">
+        <MedlemSectionSvom client:only="vue" />
+      </div>
+      <div class="content-cont">
+        <div class="flex column fakta">
+          <section class="flex row">
+            <h3>Regler & Afvaskning</h3>
+          </section>
+
+          <ol class="flex column align">
+            <li>
+              Al benyttelse af Svømmeland sker på gæsternes eget ansvar. Vær
+              opmærksom på at vores gangarealer kan være glatte både inde og
+              ude.
+            </li>
+            <li>
+              Svømmeland påtager sig intet ansvar for beklædningsgenstande,
+              værdigenstande, rede penge eller andre effekter, der efterlades i
+              lokaler eller aflåste skabe.
+            </li>
+            <li>
+              Omhyggelig afvaskning i Svømmeland med sæbe og uden badetøj er en
+              betingelse for badning. Hvis ikke håret vaskes skal der benyttes
+              badehætte. Normalt rent badetøj skal benyttes. Make-up og smykker
+              er ikke tilladt. Efter toiletbesøg skal der igen foretages
+              afvaskning uden badetøj.
+            </li>
+            <li>
+              Det er kun tilladt at fotografere børn med forældrenes accept
+              eller voksne hvis de har accepteret det.
+            </li>
+            <li>
+              Direkte forurening ved spytning, næsepudsning, urinering og lign.
+              må ikke finde sted.
+            </li>
+            <li>
+              Gæsterne skal kunne svømme 200 meter uden hjælpemidler, for at få
+              lov til at svømme i den dybe ende af 50 m bassinet og springe fra
+              vipperne.
+            </li>
+            <li>
+              Udspring fra vipperne skal ske under den største forsigtighed. Der
+              må kun være en person på vippen ad gangen, og der må max.
+              foretages 3 afsæt på vippen. Det er ikke tilladt at svømme under
+              vipperne, når de er åbne.
+            </li>
+            <li>
+              Det er ikke tilladt at skubbe hinanden i bassinerne eller holde
+              hinanden under vandet. Alt løb i Svømmeland er forbudt. Fridykning
+              kun tilladt i bevægelse.
+            </li>
+            <li>
+              Det er ikke tilladt at komme vand på saunaerne. Ved saunabesøg
+              skal man sidde på håndklæde.
+            </li>
+            <li>
+              Børn under 10 år har kun adgang ifølge med voksne (min 18 år),
+              børnene skal holdes under opsyn af den voksne.
+            </li>
+            <li>
+              Det er forbudt at forurene i Svømmeland. Papir m.v. skal henkastes
+              i affaldskurvene. Flasker, glas, øl, spiritus og mad må ikke
+              medbringes. Ligeledes er tobaksrygning, snus/tyggetobak og
+              elektroniske cigaretter (vaping) ikke tilladt. Husdyr må ikke
+              medtages.
+            </li>
+            <li>
+              Badepersonalets anvisninger og de skrevne regler, for benyttelse
+              af Svømmeland skal efterkommes. Gæster som skønnes påvirket af
+              alkohol, narkotika eller lign kan bortvises. Overtrædelse af
+              ordensreglerne kan medføre bortvisning. Hensynsløs behandling af
+              vipper, rekvisitter, beplantning m.v. medfører erstatningsansvar.
+              <strong>Ved bortvisning refunderes billetten ikke!</strong>
+            </li>
+          </ol>
+          <aside class="flex column">
+            <h3>FAKTA</h3>
+            <hr />
+            <p>
+              En person der ikke er afvasket, forurener 200 gange så meget som
+              en afvasket person.
+            </p>
+            <p>
+              <strong
+                >I tal svarer det til 3 kg. bakterier og skidt pr. uvasket
+                person pr. år.</strong
+              >
+            </p>
+          </aside>
+        </div>
+      </div>
+    </div>
+    <BackTopComp href="#hero" />
+  </main>
+  <TheFooter />
+
+  <style lang="scss">
+    @import "../../css/style.scss";
+
+    main {
+      background-color: $denim;
+      #hero {
+        z-index: 1;
+      }
+
+      .main-relative {
+        row-gap: 50px;
+        top: -200px;
+        z-index: 2;
+      }
+      .arrangement {
+        background-color: $pure-white;
+        border-radius: $box-border-section;
+        padding: 1%;
+        .img-cont {
+          width: 50%;
+          border-radius: 30px 0 0 30px;
+          .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 30px 0 0 30px;
+          }
+        }
+        section {
+          padding: 4%;
+          width: 50%;
+          row-gap: 10px;
+          border: solid 1px $denim;
+          border-radius: 0 30px 30px 0;
+          div {
+            margin-top: auto;
+          }
+        }
+      }
+      .arrow {
+        transition: all 0.5s;
+        width: 20px;
+        height: 20px;
+        fill: $eerie-black;
+      }
+      .fakta {
+        background-color: $champagne;
+        box-shadow: $box-shadow;
+        width: 80%;
+        margin: 3%;
+        margin: 0 auto;
+        transition: $transition;
+        outline: solid 30px transparent;
+
+        section {
+          align-items: center;
+          width: inherit;
+          padding: 2% 3%;
+          .arrow {
+            margin-left: auto;
+            width: 15px;
+          }
+        }
+        p {
+          padding: 3%;
+        }
+        ol {
+          list-style-type: decimal;
+          padding: 2% 5% 2% 5%;
+          row-gap: 15px;
+          li {
+            width: 80%;
+            cursor: text;
+            padding-left: 5px;
+          }
+        }
+        aside {
+          padding: 5% 10% 5% 10%;
+          color: $pure-white;
+          background-color: $denim;
+          p {
+            padding: 0;
+            margin-top: 15px;
+          }
+        }
+      }
+
+      details[open] {
+        // Max-height bruges til animationen, den skal være større end det content der åbnes, derfor sat til 2000px
+        max-height: 2000px;
+        .arrow {
+          transform: rotate(90deg);
+        }
+      }
+    }
+
+    @media (max-width: 850px) {
+      main {
+        .arrangement {
+          flex-direction: column;
+          .img-cont {
+            width: 100%;
+            border-radius: 30px 30px 0 0;
+            .img {
+              border-radius: 30px 30px 0 0;
+            }
+          }
+          section {
+            width: 100%;
+            border-radius: 0 0 30px 30px;
+          }
+        }
+      }
+    }
+  </style>
+</Layout>

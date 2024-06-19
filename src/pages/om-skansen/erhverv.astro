@@ -1,0 +1,271 @@
+---
+// GENERAL
+import Layout from "../../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+// ASTRO
+import TheHeader from "../../components/Astro/TheHeader.astro";
+import TheFooter from "../../components/Astro/TheFooter.astro";
+import BackTopComp from "../../components/Astro/BackTopComp.astro";
+import NavigateFurther from "../../components/Astro/NavigateFurther.astro";
+import ButtonEkstern from "../../components/Astro/ButtonEkstern.astro";
+// VUE
+import FiftyHero from "../../components/VUE/FiftyHero.vue";
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import Img2 from "../../assets/img/erhverv/image2.png";
+// IMG SOURCE = Oplevskansen.dk
+import Img4 from "../../assets/img/erhverv/image4.png";
+---
+
+<Layout
+  title="Skansen ⎮ Erhverv"
+  description="Står du og skal afholde kursus, møde eller konference, men mangler du de helt rette lokaler? Så kom og afhold det i Skansen, vi har over 30 års erfaring inden for kursusfaciliteter og forstår, at hver en begivenhed er unik."
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="none"
+    svomBg="none"
+    cafeBg="none"
+    eventBg="none"
+    opholdBg="none"
+    omBg="#0073c3"
+    fhDDBg="none"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    shDDBg="none"
+    viDDBg="none"
+    erDDBg="#0073c3"
+  />
+  <main>
+    <div id="hero">
+      <!-- HERO IMG SOURCE = https://www.pexels.com/photo/a-woman-in-red-long-sleeve-shirt-6476783/ -->
+      <FiftyHero client:only="vue" />
+    </div>
+    <div class="main-relative">
+      <div class="full-width">
+        <div class="content-cont flex column">
+          <!-- Cont 1 -->
+          <div class="flex row cont align">
+            <section class="flex column">
+              <h2>Erhverv</h2>
+              <p>Afhold kurser, møder og konferencer hos os</p>
+              <p>
+                Skansen som kursuscenter har stor erfaring med både større og
+                mindre møder i vores lokaler samt konferencer i vores haller. Vi
+                har mere end 30 års erfaring indenfor afvikling af møde- og
+                konferencefaciliteter, hvor vi har gæsten i centrum.
+              </p>
+              <p>
+                Vi skræddersyr gerne ophold efter behov og ønsker ned til
+                mindste detalje. Ved hvert møde eller konference vil der være
+                mulighed for, at bruge centerets tekniske udstyr, herunder
+                projektor og lydanlæg.
+              </p>
+              <p>
+                Al bespisning vil foregå gennem Skansen Restaurant, hvor der
+                bliver lagt vægt på den rigtige ernæring og friske råvarer til
+                dig og dine gæster.
+              </p>
+            </section>
+            <div class="img-cont">
+              <!-- IMG SOURCE = Oplevskansen.dk -->
+              <Picture
+                src={Img2}
+                alt="Smilende kvinde, der holder oplæg"
+                class="img"
+              />
+            </div>
+          </div>
+          <!-- Cont 1 -->
+          <!-- Cont 1 -->
+          <div class="flex row cont align">
+            <div class="flex column align cont-sec2-left">
+              <section class="flex row align">
+                <h4>Fitness/Hold Firmaaftale pr.md.</h4>
+                <p>219,00 kr.</p>
+              </section>
+              <section class="flex row align">
+                <h4>Depositum armbånd fitness</h4>
+                <p>50,00 kr.</p>
+              </section>
+              <section>
+                <p>
+                  For adgang til faciliteterne kræves der et armbånd, som kan
+                  hentes i receptionen. Et armbånd koster 50,- i depositum, som
+                  du får retur ved aflevering. Mister du båndet skal du betale
+                  kr. 50 igen.
+                </p>
+                <p>
+                  For køb af månedsmedlemskab med studie/pensionist/teen-rabat,
+                  kræves der fremvisning af studiekort, pensionist bevis eller
+                  gyldigt ID som bevis, når du afhenter armbånd.
+                </p>
+              </section>
+            </div>
+            <section class="flex column" id="firmaaftaler">
+              <h2>Firmaaftale</h2>
+              <p>
+                Er I interesseret i, at høre mere om mulighederne eller sende en
+                forespørgsel på en reservation, er I velkommen til at skrive en
+                mail til E-mail: <a
+                  class="a-style"
+                  href="mailto:info@oplevskansen.dk"
+                  title="Åben dit foretrukne mail program"
+                  >info@oplevskansen.dk</a
+                > eller ring på vores Telefon:<a
+                  class="a-style"
+                  href="tel:+45 98174366"
+                  title="Ring til Skansen på +45 98174366"
+                >
+                  <strong>+45 98 17 43 66</strong></a
+                >
+              </p>
+              <p>
+                Har I bestemte ønsker til maden, så oplys venligst dette ved
+                booking af konference hos os.
+              </p>
+              <p>
+                Ønsker du at oprette en firmaaftale til vores fitness? Kontakt
+                os på mail: info@aalborgfirmaidraet.dk eller læs mere på Aalborg
+                Firmaidræts hjemmeside.
+              </p>
+              <div class="but">
+                <ButtonEkstern
+                  link="https://www.aalborgfirmaidraet.dk/"
+                  ptxt="Aalborg Firmaidræt"
+                />
+              </div>
+            </section>
+          </div>
+          <!-- Cont 1 -->
+          <!-- Cont 1 -->
+          <div class="flex row cont align">
+            <section class="flex column">
+              <h2>Er I interesseret?</h2>
+              <p>
+                På Skansen har vi tilknyttet Skansen Restaurant, som står til
+                rådighed for selskaber og begravelser.
+              </p>
+              <p>
+                Har I bestemte ønsker til maden, så oplys venligst dette ved
+                booking af konference hos os.
+              </p>
+              <p>
+                Ved hvert selskab er både kvalitet og friske råvarer i centrum,
+                samt et seriøst, venligt og imødekommende personale. Vi tilbyder
+                lokaler til mellem 15 og op til 1000 gæster.
+              </p>
+            </section>
+            <div class="img-cont">
+              <!-- IMG SOURCE = Oplevskansen.dk -->
+              <Picture src={Img4} alt="Skansens mødelokaler" class="img" />
+            </div>
+          </div>
+          <!-- Cont 1 -->
+        </div>
+      </div>
+    </div>
+    <NavigateFurther />
+    <BackTopComp href="#hero" />
+  </main>
+  <TheFooter />
+</Layout>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  .full-width {
+    background-color: $pure-white;
+  }
+  .cont {
+    margin: 25px 0 25px 0;
+    background-color: $champagne;
+    padding: 25px;
+    border-radius: $box-border-section;
+    section {
+      padding: 25px;
+      width: 55%;
+      row-gap: 10px;
+      .but {
+        max-width: 150px;
+        margin-top: 10px;
+      }
+    }
+    .cont-sec2-left {
+      background-color: $pure-white;
+      border-radius: $box-border-element;
+      max-width: 600px;
+      padding: 25px;
+      section {
+        width: 90%;
+        padding: 10px;
+        &:nth-child(1),
+        &:nth-child(2) {
+          border-bottom: solid 1px $eerie-black;
+          p {
+            margin-left: auto;
+            background-color: $platinum;
+            width: 120px;
+          }
+        }
+        p {
+          padding: 20px;
+          height: 100%;
+        }
+      }
+    }
+    .img-cont {
+      height: 100%;
+      width: 45%;
+      .img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    .cont {
+      flex-direction: column;
+      &:nth-child(2) {
+        flex-direction: column-reverse;
+      }
+      section {
+        width: 100%;
+      }
+      .img-cont {
+        width: 80%;
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    .cont {
+      .cont-sec2-left {
+        background-color: $pure-white;
+        border-radius: $box-border-element;
+        max-width: 600px;
+        padding: 25px;
+        section {
+          width: 90%;
+          padding: 10px;
+          &:nth-child(1),
+          &:nth-child(2) {
+            border-bottom: solid 1px $eerie-black;
+            p {
+              margin-left: auto;
+              background-color: $platinum;
+              width: -webkit-fit-content;
+              font-size: $font-mobile-p-small;
+            }
+          }
+          p {
+            padding: 10px;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+</style>

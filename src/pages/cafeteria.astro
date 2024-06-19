@@ -1,0 +1,98 @@
+---
+// GENERAL
+import Layout from "../layouts/Layout.astro";
+import TheHeader from "../components/Astro/TheHeader.astro";
+import TheFooter from "../components/Astro/TheFooter.astro";
+// ASTRO
+import CafeteriaCollage from "../components/Astro/CafeteriaCollage.astro";
+import NavigateFurther from "../components/Astro/NavigateFurther.astro";
+// VUE
+import Menukort from "../components/VUE/Menukort.vue";
+import AabningCafeteriaComp from "../components/VUE/AabningCafeteriaComp.vue";
+import FiftyHero from "../components/VUE/FiftyHero.vue";
+// IMG
+// IMG SOURCE Collage= Oplevskansen.dk
+import img1 from "../assets/img/cafeteria/cafeteria_overblik.jpg";
+// IMG SOURCE Collage= Oplevskansen.dk
+import img2 from "../assets/img/cafeteria/cafeteria_disk.jpg";
+// IMG SOURCE Collage= Oplevskansen.dk
+import img3 from "../assets/img/cafeteria/cafeteria_kaffemaskine.jpg";
+// IMG SOURCE Collage= Oplevskansen.dk
+import img4 from "../assets/img/cafeteria/cafeteria_disk_2.jpg";
+// IMG SOURCE Collage= Oplevskansen.dk
+import img5 from "../assets/img/cafeteria/cafeteria_brød.jpg";
+// IMG SOURCE Collage= Oplevskansen.dk
+import img6 from "../assets/img/cafeteria/cafeteria_lampe.jpg";
+import BackTopComp from "../components/Astro/BackTopComp.astro";
+---
+
+<Layout
+  title="Skansen ⎮ Cafeteria"
+  description="Nyd en lækker pause på Skansen Café med vores varierede udvalg af sandwich, burgere og lette retter. Tilfredsstil den lille sult med sunde snacks og forskellige is."
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="none"
+    svomBg="none"
+    cafeBg="#0073c3"
+    eventBg="none"
+    opholdBg="none"
+    omBg="none"
+    fhDDBg="none"
+    shDDBg="none"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+  <main>
+    <div id="hero">
+      <!-- IMG SOURCE = Gruppe 5 -->
+      <FiftyHero client:only="vue" />
+    </div>
+    <div class="flex menukort" id="menukort">
+      <Menukort client:only="vue" />
+      <AabningCafeteriaComp client:only="vue" class="aabningstid" />
+    </div>
+    <CafeteriaCollage
+      img1={img1}
+      imgAlt1="Overblik over Skansens cafeområde"
+      img2={img2}
+      imgAlt2="Disken ved Skansens cafeområde"
+      img3={img3}
+      imgAlt3="Disken ved Skansens cafeområde med kaffemaskine"
+      img4={img4}
+      imgAlt4="Disken ved Skansens cafeområde"
+      img5={img5}
+      imgAlt5="Maden ved Skansens cafe kan bestå af brød, rugbrød og frugt"
+      img6={img6}
+      imgAlt6="Skansens cafes siddeområde, hvor du kan nyde lækker mad fra cafeen"
+    />
+    <NavigateFurther />
+    <BackTopComp href="#hero" />
+  </main>
+  <TheFooter />
+</Layout>
+
+<style lang="scss">
+  @import "../css/style.scss";
+  main {
+    background-color: $champagne;
+    .Hero {
+      height: 500px;
+    }
+  }
+  .menukort {
+    margin: auto;
+  }
+  @media (max-width: 800px) {
+    .menukort {
+      flex-wrap: wrap;
+      .aabningstid {
+        padding-left: 5%;
+      }
+    }
+  }
+</style>

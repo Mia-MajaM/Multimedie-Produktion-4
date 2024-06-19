@@ -1,0 +1,56 @@
+---
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+---
+
+<a
+  class="flex column align"
+  href={href}
+  role="link"
+  aria-label="Tilbage til Toppen"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 320 512"
+    class="arrow"
+    aria-hidden="true"
+  >
+    <path
+      d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+    ></path>
+  </svg>
+  <p class="p-small">Tilbage til Toppen</p>
+</a>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  a {
+    background-color: $pure-white;
+    border-radius: $box-border-section;
+    height: 95px;
+    border: transparent;
+    box-shadow: $box-shadow;
+    padding: 15px;
+    cursor: pointer;
+    width: -webkit-fit-content;
+    position: sticky;
+    color: inherit;
+    bottom: 0;
+    z-index: 89;
+    margin-left: auto;
+    .arrow {
+      width: 20px;
+      height: 20px;
+      rotate: -90deg;
+      fill: $eerie-black;
+    }
+  }
+
+  .p-small {
+    font-size: $font-p-small;
+  }
+</style>

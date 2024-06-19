@@ -1,0 +1,199 @@
+---
+import { Picture } from "astro:assets";
+// IMG SOURCE = Oplevskansen.dk
+import SkansenLogo from "../../assets/img/skansen-logo_4964.png";
+
+// IMG SOURCE = https://fontawesome.com/icons/facebook?f=brands&s=solid
+import Facebook from "../../assets/svg/socials/facebook.svg";
+// IMG SOURCE = https://fontawesome.com/icons/instagram?f=brands&s=solid
+import Insta from "../../assets/svg/socials/insta.svg";
+---
+
+<footer class="flex column" role="contentinfo" aria-label="Footer">
+  <div class="full-width">
+    <div class="flex row upper-foot">
+      <div class="flex column top-txt">
+        <Picture
+          src={SkansenLogo}
+          alt="Skansen Logo"
+          format="webp"
+          class="img"
+        />
+        <p>
+          Skansen er stedet for idræt, sundhed og velvære i Nordjylland med
+          førsteklassesfaciliteter. Vi tilbyder fleksible rammer for
+          sportsgrupper og erhvervslivet.
+        </p>
+        <a class="åbn-txt" href="../pages/Om_Skansen">Se åbningstider her</a>
+      </div>
+      <section class="flex column txt-box">
+        <h3>Kontakt Os</h3>
+        <p>
+          Telefon:<a
+            class="a-style"
+            href="tel:+45 98174366"
+            title="Ring til Skansen på +45 98174366"
+          >
+            <strong>+45 98 17 43 66</strong></a
+          >
+        </p>
+        <p>
+          E-mail: <a
+            class="a-style"
+            href="mailto:info@oplevskansen.dk"
+            title="Åben dit foretrukne mail program">info@oplevskansen.dk</a
+          >
+        </p>
+        <p>Lerumbakken 11, 9400 Nørresundby</p>
+        <a
+          class="a-style"
+          target="_blank"
+          href="https://maps.app.goo.gl/28zfL1ZWc6mGwpZ39"
+          title="Åben vejvisning hos Google">Find Vej</a
+        >
+      </section>
+      <ul class="flex wrap txt-two">
+        <li><a href="../pages/Om_Skansen/om_virksomheden">Bestyrelse</a></li>
+        <li><a href="../pages/Om_Skansen/GDPR">GDPR</a></li>
+        <li><a href="../pages/Om_Skansen/job_hos_os">Job hos os</a></li>
+        <li><a href="../pages/Om_Skansen/om_virksomheden">Historien</a></li>
+        <li><a href="../pages/Om_Skansen/om_virksomheden">Regnskab</a></li>
+        <li>
+          <a href="../pages/Om_Skansen/salgsbetingelser">Salgsbetingelser</a>
+        </li>
+      </ul>
+    </div>
+    <hr />
+    <div class="flex row footer-bot">
+      <p>© All Rights Resesrved</p>
+      <div
+        class="flex row align socials"
+        role="navigation"
+        aria-label="Sociale medier"
+      >
+        <a
+          href="https://www.facebook.com/OplevSkansen/?locale=da_DK"
+          target="_blank"
+        >
+          <Picture
+            src={Facebook}
+            alt="Icon of the social media platform Facebook"
+            class="social-icon"
+          /></a
+        >
+        <a href="https://www.instagram.com/oplevskansen/" target="_blank">
+          <Picture
+            src={Insta}
+            alt="Icon of the social media platform Instagram"
+            class="social-icon"
+          /></a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  footer {
+    background-color: $pure-white;
+    padding: 2%;
+    margin-top: auto;
+    box-shadow: $box-shadow-top;
+    min-width: 350px;
+
+    .upper-foot {
+      p {
+        max-width: 65%;
+        padding-top: 4%;
+      }
+      .top-txt {
+        .img {
+          width: 150px;
+          height: auto;
+        }
+      }
+    }
+    .obn-txt {
+      text-decoration: underline;
+      color: $eerie-black;
+      padding-top: 6%;
+    }
+    .a-style {
+      text-decoration: underline;
+      color: $eerie-black;
+    }
+
+    .txt-box {
+      width: 800px;
+    }
+
+    .wrap {
+      width: 40%;
+    }
+
+    .txt-two li {
+      flex: 1 1 50%;
+      padding-left: 50px;
+      text-decoration: underline;
+      color: $eerie-black;
+    }
+
+    hr {
+      margin: 12px 0 5px 0px;
+    }
+    .footer-bot {
+      width: 100%;
+      p {
+        margin-right: auto;
+        height: 25px;
+      }
+      .socials {
+        height: 25px;
+        gap: 10px;
+
+        .social-icon {
+          width: 25px;
+          height: 25px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+  @media (max-width: 950px) {
+    .upper-foot {
+      .top-txt {
+        p {
+          max-width: 90%;
+        }
+      }
+    }
+  }
+  @media (max-width: 850px) {
+    footer {
+      * {
+        transition: $transition;
+      }
+      padding-bottom: 50px;
+      .upper-foot {
+        flex-wrap: wrap;
+        row-gap: 20px;
+        padding: 2%;
+        .top-txt {
+          p {
+            max-width: 90%;
+          }
+        }
+        section {
+          padding: 5% 0 5% 0;
+          border-top: solid 1px $eerie-black;
+          border-bottom: solid 1px $eerie-black;
+        }
+        .txt-two {
+          width: 80%;
+          row-gap: 20px;
+        }
+      }
+    }
+  }
+</style>

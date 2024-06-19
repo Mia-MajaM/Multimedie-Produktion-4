@@ -1,0 +1,231 @@
+---
+import { Picture } from "astro:assets";
+interface Props<Y> {
+  img1: Y;
+  img2: Y;
+  alt1: string;
+  alt2: string;
+}
+const { img1, img2, alt1, alt2 } = Astro.props;
+
+import AabningComp from "../VUE/AabningComp.vue";
+---
+
+<!-- Container Start -->
+<div
+  class="cont flex row"
+  role="region"
+  aria-label="Gode råd til din træning i fitness"
+>
+  <!-- Left Column -->
+  <div class="flex column left">
+    <div class="flex align txt-box">
+      <section class="flex column">
+        <h3>Gode råd til din træning i fitness</h3>
+        <ul class="flex column">
+          <li>Vi har de nyeste styrke- og cardiomaskiner.</li>
+          <li>
+            Fitnesscenteret indeholder løbebånd, motionscykler, romaskiner,
+            crosstrainers og stairmaster. Vi har også løsvægte, squatrack og
+            kabeltårn.
+          </li>
+          <li>
+            Er du til cirkeltræning, bør du besøge cirkeltræningsalen, hvor du
+            selv sætter timeren i gang når du går i gang med den første maskine.
+            Timeren hjælper dig til, hvornår det er tid at skifte til næste
+            maskine.
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div class="img-cont">
+      <Picture
+        src={img1}
+        alt={alt1}
+        formats={["avif", "webp", "png"]}
+        class="img"
+      />
+    </div>
+  </div>
+  <!-- End Left Column -->
+
+  <!-- Middle Column -->
+  <div class="flex column align mid" aria-hidden="true">
+    <AabningComp client:only="vue" />
+  </div>
+  <!-- End Middle Column -->
+
+  <!-- Right Column -->
+  <div class="flex column right">
+    <div class="img-cont">
+      <Picture
+        src={img2}
+        alt={alt2}
+        formats={["avif", "webp", "png"]}
+        class="img"
+      />
+    </div>
+
+    <div class="flex align txt-box">
+      <section class="flex column">
+        <p>
+          Oplev vores topmoderne <strong>cardioområde</strong>, hvor du kan
+          vælge mellem løbebånd, motionscykler, romaskiner, crosstrainers og
+          stairmasters for en varieret og effektiv træning.
+        </p>
+        <p>
+          Er du til <strong>cirkeltræning?</strong> Så besøg vores cirkeltræningssal,
+          hvor du kan tage kontrol over din træning ved at sætte timeren i gang,
+          når du starter på den første maskine.
+        </p>
+        <p>
+          For dig, der ønsker at <strong>styrketræne</strong> har vi løsvægte, squatrack
+          og kabeltårn. Derudover har vi maskiner, der er designet til allround-træning
+          af alle kroppens muskelgrupper, så du kan opnå dine træningsmål effektivt.
+        </p>
+      </section>
+    </div>
+  </div>
+  <!-- End Right Column -->
+</div>
+<!-- Container End -->
+
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  .cont {
+    width: 100%;
+    gap: 20px;
+    padding: 45px 0 45px 0;
+
+    justify-content: center;
+    .left,
+    .right {
+      gap: 2%;
+      max-width: 450px;
+
+      .txt-box {
+        background-color: $pure-white;
+        border-radius: $box-border-section;
+        padding: 25px;
+        height: 60%;
+        min-height: 60%;
+        section {
+          outline: solid 2px $cornell-red;
+          border-radius: $box-border-element;
+          padding: 5%;
+          max-height: 100%;
+          height: -webkit-fit-content;
+          p {
+            &:nth-child(2),
+            &:nth-child(3) {
+              margin-top: 20px;
+            }
+          }
+          ul {
+            list-style-type: disc;
+            list-style-position: inside;
+            row-gap: 20px;
+          }
+        }
+      }
+    }
+
+    .mid {
+      outline: solid 5px $pure-white;
+      border-radius: 30px;
+    }
+    .img-cont {
+      min-width: 300px;
+      max-height: 100%;
+      min-height: 40%;
+      background-color: $pure-white;
+      border: solid 10px $pure-white;
+      border-radius: $box-border-section;
+      .img {
+        border-radius: $box-border-section;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  @media (max-width: 1550px) {
+    .cont {
+      .left {
+        width: 100%;
+        height: 100%;
+        row-gap: 25px;
+
+        .txt-box {
+          height: 40%;
+          section {
+            row-gap: 10px;
+            padding: 25px;
+            font-size: $font-p-small;
+            ul {
+              row-gap: 10px;
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1250px) {
+    .cont {
+      flex-direction: column;
+      .txt-box {
+        padding: 2%;
+      }
+
+      .mid {
+        width: 50%;
+        align-self: center;
+      }
+      .left,
+      .right {
+        flex-direction: row;
+        margin: 0 auto;
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+  @media (max-width: 950px) {
+    .cont {
+      flex-direction: column;
+
+      .txt-box {
+        padding: 2%;
+      }
+      .mid {
+        width: 50%;
+      }
+      .left,
+      .right {
+        width: 100%;
+        max-width: none;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .cont {
+      .left,
+      .right {
+        flex-direction: column;
+        margin-bottom: 20px;
+        gap: 25px;
+        .txt-box {
+          section {
+            padding: 25px;
+          }
+        }
+      }
+      .mid {
+        width: 80%;
+      }
+    }
+  }
+</style>

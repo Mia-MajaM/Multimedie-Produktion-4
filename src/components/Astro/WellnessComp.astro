@@ -1,0 +1,284 @@
+---
+// GENERAL
+import { Picture } from "astro:assets";
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import img1 from "../../assets/img/wellness/img1_dsc_5921_skumring_3274.jpg";
+// IMG SOURCE = Oplevskansen.dk
+import img2 from "../../assets/img/wellness/img2_dsc_5919_3262.jpg";
+// IMG SOURCE = Oplevskansen.dk
+import img3 from "../../assets/img/wellness/img3_dsc_5918_3258.jpg";
+// IMG SOURCE = Oplevskansen.dk
+import img4 from "../../assets/img/wellness/img4_dsc_5916_3250.jpg";
+
+import ButtonIntern from "./ButtonIntern.astro";
+---
+
+<div class="full-width flex column">
+  <div class="content-cont card-cont1 flex wrap">
+    <!-- Card 1  -->
+    <div class="card flex column">
+      <div class="img-cont">
+        <Picture src={img1} alt="Panoramasauna i Skansen Nørresundby" class="img" />
+      </div>
+      <section class="flex column">
+        <h2>Familiegus</h2>
+        <p>
+          Tag børnene med i Saunagus kl. 13 alle weekender og oplev varmen og de
+          lækre dufte.
+        </p>
+        <p>
+          Slap herefter af i varmtvandsbassinet, eller test modet i det kolde
+          Svends Kar, inden I ser hvem der er den hurtigste på rutsjebanen.
+        </p>
+      </section>
+    </div>
+    <!-- Card 1 -->
+    <!-- Card 2  -->
+    <div class="card flex column">
+      <div class="img-cont">
+        <Picture src={img2} alt="Det kolde brusebad og kelosauna i Skansen Nørresundby" class="img" />
+      </div>
+      <section class="flex column">
+        <h2>Vores Saunaer</h2>
+        <p>
+          I vores wellnessafdeling har du mulighed for at koble af og nyde
+          indendørs varmtvandsbassiner med massagedyser og boblezoner, samt et
+          udendørs varmtvandsbassin. Vi har tre forskellige typer saunaer, der
+          kan give enhver følelsen af velvære og fornyet energi.
+        </p>
+        <p>
+          Vores afdeling med wellness har en panoramasauna og en af Danmarks
+          største Kelosaunaer, hvor vi laver ca. 30 saunagus om ugen med
+          forskellige dufte. Derudover kan vi tilbyde dampbad, koldtvandskar og
+          brusere.
+        </p>
+      </section>
+    </div>
+    <!-- Card 2 -->
+  </div>
+  <div class="sauna-cont flex column sauna-cont1">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="sauna-line">
+      <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+    </svg><svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      class="sauna-line"
+    >
+      <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+    </svg><svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      class="sauna-line"
+    >
+      <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+    </svg><svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      class="sauna-line"
+    >
+      <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+    </svg>
+  </div>
+</div>
+
+<div class="full-width flex column">
+  <div class="content-cont card-cont1 flex wrap">
+    <!-- Card 1  -->
+    <div class="card flex column">
+      <div class="img-cont">
+        <Picture src={img3} alt="Udendørs varmtvandsbassin i Skansen Nørresundby" class="img" />
+      </div>
+      <section class="flex column">
+        <h2>Stilleaftener</h2>
+        <p>
+          Når midt ugens stress rammer, kan du koble helt af til stilleaften i
+          Skansens wellness. Tirsdag, onsdag og torsdag skal tempoet nemlig helt
+          ned i wellness. Vi sørger for den hyggelige og afslappende stemning,
+          når vi skruer ned for lyset og op for hyggen.
+        </p>
+        <p>
+          Fra klokken 18.00 er der gus hvert tredje kvarter, altså 18.00 - 18.45
+          - 19.30 - 20.15 og 21.00. Herefter kalder vi op af vandet klokken
+          21.30. Mellem vores saunagus, som foregår i enten Panoramasauna eller
+          Kelosauna (eller ved nok gæster begge), kan du slappe af i et af de
+          åbne bassiner.
+        </p>
+        <p>
+          I Wellness er varmvandsbassinet, udebassinet og Svends Kar åbent hele
+          aftenen, mens der fra klokken 19 - 21.30 også bliver åbnet i
+          FUN-bassinet kun for voksne. Ligeledes er baren åben 19.00 - 20.30 med
+          bemanding hele tiden. Så hvis du bliver tørstig, er det let at finde
+          en øl eller vand.
+        </p>
+      </section>
+    </div>
+    <!-- Card 1 -->
+    <!-- Card 2  -->
+    <div class="card flex column">
+      <div class="img-cont">
+        <Picture src={img4} alt="Siddeområde i Skansens udendørs wellness-afdeling" class="img" />
+      </div>
+      <section class="flex column">
+        <h2>Familiegus</h2>
+        <p>
+          Vi tilbyder desuden leje af Relaxafdelingen i weekender fra kl. 15 -
+          17 (opkald af vandet 16.30) inkl. saunagus - måske til et polterabend,
+          fødselsdag eller noget helt tredje.
+        </p>
+        <p>
+          Prisen på leje i weekenden er 2500,- for op til 20 personer. Ved flere
+          personer er prisen 85,- per person.
+        </p>
+        <p>
+          Ring og hør mere på telefon 98 17 43 66 eller skriv til e-mail
+          info@oplevskansen.dk. Vi glæder os til at se dig!
+        </p>
+        <ButtonIntern href="/om-skansen#kontakt" p="Kontakt Os" />
+      </section>
+    </div>
+    <!-- Card 2 -->
+  </div>
+  <div class="sauna-cont flex column sauna-cont2">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="sauna-line">
+      <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+    </svg><svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      class="sauna-line"
+    >
+      <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+    </svg><svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      class="sauna-line"
+    >
+      <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+    </svg><svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      class="sauna-line"
+    >
+      <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+    </svg>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  .full-width {
+    margin: 35px 0 35px 0;
+
+    .sauna-cont1 {
+      margin-right: auto;
+    }
+    .sauna-cont2 {
+      margin-left: auto;
+    }
+    .sauna-cont {
+      width: 87.5%;
+      row-gap: 10px;
+      .sauna-line {
+        width: 100%;
+        max-width: 1920px;
+        height: 30px;
+      }
+    }
+
+    .card-cont1 {
+      .card {
+        &:nth-child(2) {
+          margin-left: auto;
+          top: 150px;
+          border-radius: 30px 30px 0 30px;
+          box-shadow: $box-shadow;
+        }
+      }
+    }
+    .card-cont2 {
+      .card {
+        &:nth-child(1) {
+          margin-right: auto;
+          top: 150px;
+          border-radius: 30px 30px 0 30px;
+          box-shadow: $box-shadow;
+        }
+      }
+    }
+    .content-cont {
+      .card {
+        background-color: $champagne;
+        max-width: 550px;
+        border-radius: 30px 30px 0 0;
+        box-shadow: $box-shadow-inset-bot;
+        position: relative;
+        .img-cont {
+          width: 100%;
+          height: 40%;
+          border-radius: 30px 30px 0 0;
+          .img {
+            border-radius: 30px 30px 0 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        section {
+          padding: 35px 35px 0 35px;
+          row-gap: 25px;
+        }
+      }
+    }
+  }
+  @media (max-width: 1375px) {
+    .full-width {
+      .sauna-cont1,
+      .sauna-cont2 {
+        margin: 0;
+      }
+      .sauna-cont {
+        width: 90%;
+      }
+      .card-cont1 {
+        row-gap: 50px;
+        justify-content: center;
+        .card {
+          &:nth-child(2) {
+            margin-left: 0;
+            top: 0;
+            border-radius: 30px 30px 0 0;
+          }
+        }
+      }
+      .card-cont2 {
+        .card {
+          &:nth-child(1) {
+            margin-right: 0;
+            top: 0;
+            border-radius: 30px 30px 0 0;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .full-width {
+      .sauna-cont {
+        width: 100%;
+        .sauna-line {
+          width: 100%;
+        }
+      }
+      .content-cont {
+        .card {
+          padding-bottom: 50px;
+          &:nth-child(1) {
+            border-radius: 30px;
+            box-shadow: $box-shadow;
+          }
+        }
+      }
+    }
+  }
+</style>

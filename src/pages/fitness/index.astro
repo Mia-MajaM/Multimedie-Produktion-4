@@ -1,0 +1,76 @@
+---
+// GENERAL
+import Layout from "../../layouts/Layout.astro";
+import TheHeader from "../../components/Astro/TheHeader.astro";
+import TheFooter from "../../components/Astro/TheFooter.astro";
+// ASTRO
+import ShapeSection from "../../components/Astro/ShapeSection.astro";
+import FitnessSec2 from "../../components/Astro/FitnessSec2.astro";
+import BackTopComp from "../../components/Astro/BackTopComp.astro";
+// VUE
+import MedlemskabSection from "../../components/VUE/MedlemSection.vue";
+import VueVideoComp from "../../components/VUE/VueVideoComp.vue";
+import FiftyHero from "../../components/VUE/FiftyHero.vue";
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import Sec2Img2 from "../../assets/img/fitness/shape_img_1.png";
+// IMG SOURCE = Gruppe 5
+import Sec2Img1 from "../../assets/img/fitness/shape_img_2.png";
+---
+
+<Layout
+  title="Skansen ⎮ Fitness"
+  description="Oplev vores topmoderne fitnesscenter i Nørresundby, hvor vi tilbyder et bredt udvalg af fitnessaktiviteter og fokuserer på sundhed og velvære. Vores dedikerede personale sikrer fremragende service til alle vores gæster."
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="#0073c3"
+    svomBg="none"
+    cafeBg="none"
+    eventBg="none"
+    opholdBg="none"
+    omBg="none"
+    fhDDBg="none"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    shDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+  <main class="flex column">
+    <div id="hero">
+      <!-- // IMG SOURCE = Oplevskansen.dk -->
+      <FiftyHero client:only="vue" />
+    </div>
+    <div class="main-relative flex column">
+      <div class="flex align video" id="video">
+        <VueVideoComp client:only="vue" />
+      </div>
+      <div class="full-width flex align">
+        <div class="content-cont">
+          <ShapeSection
+            alt1="Skansens fitnesscenter med nye moderne maskiner"
+            img1={Sec2Img1}
+            img2={Sec2Img2}
+            alt2="Romaskiner i Skansen fitness"
+          />
+        </div>
+      </div><div class="full-width flex align" id="medlemskab">
+        <MedlemskabSection client:only="vue" />
+      </div>
+      <FitnessSec2 />
+    </div>
+    <BackTopComp href="#hero" />
+  </main>
+  <TheFooter />
+</Layout>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  main {
+    background-color: $cornell-red;
+    row-gap: 50px;
+  }
+</style>

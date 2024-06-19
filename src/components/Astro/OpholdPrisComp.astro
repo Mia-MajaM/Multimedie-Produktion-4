@@ -1,0 +1,79 @@
+---
+
+---
+
+<div class="flex cont wrap align">
+  <div
+    class="pris-cont"
+    role="region"
+    aria-labelledby="med-afbestilling-overskrift"
+  >
+    <section class="top flex column align">
+      <h3 id="med-afbestilling-overskrift">Priser med afbestilling</h3>
+      <p>Med afbestilling</p>
+    </section>
+    <section
+      class="bot flex column"
+      role="region"
+      aria-labelledby="vaerelsespriser-overskrift-1"
+    >
+      <h4 id="vaerelsespriser-overskrift-1">Værelsespriser</h4>
+      <p>1 person: <strong>475 kr.</strong></p>
+      <p>2 personer: <strong>655 kr.</strong></p>
+      <p>3 personer: <strong>865 kr.</strong></p>
+      <p>4 personer: <strong>1000 kr.</strong></p>
+      <p>5 personer: <strong>1140 kr.</strong></p>
+      <p>6 personer: <strong>1270 kr.</strong></p>
+    </section>
+  </div>
+
+  <div
+    class="pris-cont"
+    role="region"
+    aria-labelledby="uden-afbestilling-overskrift"
+  >
+    <section class="top flex column align">
+      <h3 id="uden-afbestilling-overskrift">Priser uden afbestilling</h3>
+      <p>Uden afbestilling</p>
+    </section>
+    <section
+      class="bot flex column"
+      role="region"
+      aria-labelledby="vaerelsespriser-overskrift-2"
+    >
+      <h4 id="vaerelsespriser-overskrift-2">Værelsespriser</h4>
+      <p>1 person: <strong>455 kr.</strong></p>
+      <p>2 personer: <strong>615 kr.</strong></p>
+      <p>3 personer: <strong>805 kr.</strong></p>
+      <p>4 personer: <strong>940 kr.</strong></p>
+      <p>5 personer: <strong>1080 kr.</strong></p>
+      <p>6 personer: <strong>1200 kr.</strong></p>
+    </section>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  .cont {
+    column-gap: 50px;
+    row-gap: 50px;
+    .pris-cont {
+      width: 350px;
+      box-shadow: $box-shadow;
+      .top {
+        padding: 2%;
+        background-color: $platinum;
+      }
+      .bot {
+        padding: 30px 50px 30px 50px;
+        row-gap: 15px;
+        p {
+          display: flex;
+          strong {
+            margin-left: auto;
+          }
+        }
+      }
+    }
+  }
+</style>

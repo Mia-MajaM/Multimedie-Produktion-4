@@ -1,0 +1,188 @@
+---
+// GENERAL
+import Layout from "../../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+import TheHeader from "../../components/Astro/TheHeader.astro";
+import TheFooter from "../../components/Astro/TheFooter.astro";
+// ASTRO
+import ButtonEkstern from "../../components/Astro/ButtonEkstern.astro";
+import NavigateFurther from "../../components/Astro/NavigateFurther.astro";
+// VUE
+import HoldComp from "../../components/VUE/HoldComp.vue";
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import img1 from "../../assets/img/hold/Fitness1.png";
+// IMG SOURCE = Oplevskansen.dk
+import img2 from "../../assets/img/hold/Fitness2.png";
+// IMG SOURCE = Oplevskansen.dk
+import img3 from "../../assets/img/hold/Haandbold.png";
+// IMG SOURCE = Oplevskansen.dk
+import img4 from "../../assets/img/hold/Svoemning.png";
+// IMG SOURCE = Oplevskansen.dk
+import img5 from "../../assets/img/hold/Tennis.png";
+// IMG SOURCE = Oplevskansen.dk
+import img6 from "../../assets/img/hold/Welness.png";
+import BackTopComp from "../../components/Astro/BackTopComp.astro";
+---
+
+<Layout
+  title="Skansen ⎮ Holdbeskrivelser"
+  description="Udforsk vores spændende klasser og træningsmuligheder. Fra styrke og kondition til yoga og dans, vi har noget for enhver smag og fitnessniveau. Kom og bliv en del af vores energifyldte fællesskab og nå dine træningsmål hos os."
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="#0073c3"
+    svomBg="none"
+    cafeBg="none"
+    eventBg="none"
+    opholdBg="none"
+    omBg="none"
+    fhDDBg="#0073c3"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    shDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+  <main>
+    <div class="full-width flex row wrap">
+      <div class="left flex align">
+        <section class="flex column" id="hero">
+          <h1>Hold hos Skansen</h1>
+          <p>
+            Velkommen til Skansens hold, hvor fitness møder sjov socialt samvær!
+            Vores hold har noget for enhver smag. Der er derfor plads til alle.
+            Om du er til at opbygge muskler eller få bedre kondition, så byder
+            Skansen på noget til alle og enhver (mener vi!).
+          </p>
+          <p>
+            I Skansen træner du kun hos de dygtigste og mest engagerede
+            instruktører, som sørger for, at du får mest muligt ud af din
+            træning.
+          </p>
+          <p>
+            Læs mere om vores hold og meld dig til i dag! Så ses vi i Skansen,
+            når det passer dig.
+          </p>
+          <div class="flex row buttons">
+            <ButtonEkstern
+              link="https://shop.compuapp.dk/norresun"
+              ptxt="Book hold"
+            />
+            <ButtonEkstern
+              link="https://shop.compuapp.dk/norresun/booking"
+              ptxt="Se Holdplan"
+            />
+          </div>
+        </section>
+      </div>
+      <div class="right grid">
+        <Picture
+          src={img1}
+          alt="Siluet af en person, der laver strækøvelse"
+          class="img"
+        />
+        <Picture
+          src={img2}
+          alt="Siluet af en person, der laver en gymnastisk strækøvelse i rød dragt"
+          class="img"
+        />
+        <Picture
+          src={img3}
+          alt="Siluet af en håndboldspiller i et kast"
+          class="img"
+        />
+        <Picture
+          src={img6}
+          alt="Siluet af en person, der svømmer i rød badedragt"
+          class="img"
+        />
+        <Picture
+          src={img5}
+          alt="Siulet af en person, der spiller tennis"
+          class="img"
+        />
+        <Picture
+          src={img4}
+          alt="Siluet af en person, der sidder i en sauna med håndklæde"
+          class="img"
+        />
+      </div>
+    </div>
+    <!-- // IMG SOURCE alle hold = Oplevskansen.dk -->
+    <HoldComp client:only="vue">
+      <ButtonEkstern
+        link="https://shop.compuapp.dk/norresun/booking"
+        ptxt="Se Holdplan"
+      />
+      <ButtonEkstern
+        link="https://shop.compuapp.dk/norresun"
+        ptxt="Bliv Medlem"
+      />
+    </HoldComp>
+    <div class="further">
+      <NavigateFurther />
+    </div>
+    <BackTopComp href="#hero" />
+  </main>
+  <TheFooter />
+</Layout>
+<style lang="scss">
+  @import "../../css/style.scss";
+  main {
+    background-color: $cornell-red;
+    .full-width {
+      background-color: $pure-white;
+      padding-bottom: 15px;
+      .left {
+        width: 45%;
+        section {
+          width: 60%;
+          color: $eerie-black;
+          row-gap: 25px;
+          .buttons {
+            column-gap: 50px;
+          }
+        }
+        @media (max-width: 1025px) {
+          section {
+            width: 80%;
+          }
+        }
+      }
+      .right {
+        margin-left: auto;
+        width: 55%;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 5px;
+      }
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    @media (max-width: 431px) {
+      .full-width {
+        justify-content: center;
+        .left {
+          width: 80%;
+        }
+        .right {
+          display: none;
+        }
+      }
+    }
+    .further {
+      background-color: $pure-white;
+      padding: 25px 0 25px 0;
+    }
+  }
+</style>

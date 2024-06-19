@@ -1,0 +1,85 @@
+---
+// GENERAL
+import Layout from "../../layouts/Layout.astro";
+import TheHeader from "../../components/Astro/TheHeader.astro";
+import TheFooter from "../../components/Astro/TheFooter.astro";
+// ASTRO
+import HeroFifty from "../../components/Astro/HeroFifty.astro";
+import NavigateFurther from "../../components/Astro/NavigateFurther.astro";
+import BackTopComp from "../../components/Astro/BackTopComp.astro";
+import OmKontakt from "../../components/Astro/OmKontakt.astro";
+// VUE
+import AabningComp from "../../components/VUE/AabningComp.vue";
+import Klubber from "../../components/VUE/KlubSection.vue";
+// IMG
+// IMG SOURCE = Gruppe 5
+import SkansenHero from "../../assets/img/skansen-hero.png";
+---
+
+<Layout
+  title="Skansen ⎮ Om Skansen"
+  description="Skansebadet åbnede i 1968. Solsidehallen kom til i 1971. I 1993 moderniserede vi svømmehallen. I 2022 blev vi til Skansen med nyt fitnesscenter og Fun- og Relax-afdeling."
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="none"
+    svomBg="none"
+    cafeBg="none"
+    eventBg="none"
+    opholdBg="none"
+    omBg="#0073c3"
+    fhDDBg="none"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    shDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+  <main>
+    <div id="hero">
+      <HeroFifty
+        h1="Velkommen til Skansen - dit moderne idrætscenter"
+        p1="I sommeren 1968 stod svømmebassinet klar, og blev døbt Skansebadet. i 1969 kunne man tage det første spadestik til den første idrætshal i Nørresundby. Den 15. Maj 1971 blev hallen indviet og døbt “Solsidehallen”."
+        p2="I 1981 udvidede man hallen med en ny bygning, hvor der i overetagen findes kontorer, cafeteria mm. Underetagen blev indrettet med omklædningsrum. 1. september 1993 lukkede man badet og rev det gamle glashus ned. Glashuset over 50 m bassinet blev erstattet af en murstensbygning, og der blev foretaget en udvidelse med nyt motionscenter, automatcafé, samt i forlængelse af svømmehallen en Fun- og Relaxafdeling. I dag er vi Skansen, hvilket vi blev i 2022, hvor der også blev bygget et helt nyt fitnesscenter. Velkommen. "
+        image={SkansenHero}
+      />
+    </div>
+    <div class="full-width flex column align" id="aabning">
+      <div class="content-cont flex column wrap">
+        <h2>Åbningstider</h2>
+      </div>
+      <AabningComp client:only="vue" />
+    </div>
+    <div id="klubber">
+      <!-- // IMG ALL KLUBBER SOURCE = Oplevskansen.dk -->
+      <Klubber client:only="vue" />
+    </div>
+    <div id="kontakt">
+      <OmKontakt />
+    </div>
+    <NavigateFurther />
+    <BackTopComp href="#hero" />
+  </main>
+  <TheFooter />
+</Layout>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  main {
+    #aabning {
+      padding-bottom: 3%;
+
+      .content-cont {
+        h2 {
+          padding: 2% 0 2% 0;
+        }
+      }
+      .bg-color {
+        background-color: $champagne;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,135 @@
+---
+// Y = udefineret value / Gør indsættelsen af alle værdier mulige - som i String og tal ignoreres
+interface Props {
+  h1: string;
+  p1: string;
+  p2: string;
+  background: string;
+  bgA: string;
+  butTxt: string;
+  href: string;
+}
+
+const { h1, p1, p2, href, background, bgA, butTxt } = Astro.props;
+---
+
+<div
+  class="flex row full-width"
+  id="hero"
+  style={`background-image: url(${background})`}
+>
+  <div class="content-cont flex row align">
+    <div class="flex column cont">
+      <section class="flex column">
+        <h1>{h1}</h1>
+        <p class="p-hero">{p1}</p>
+        <p class="p-hero">{p2}</p>
+      </section>
+      <a href={href} class=`${bgA} flex column align` aria-label={butTxt}>
+        <div class="flex column align">
+          <p>{butTxt}</p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            class="arrow"
+            viewBox="0 0 18 10"
+          >
+            <path
+              fill="#fff"
+              d="M9.63574 9.63574c-.48828.48826-1.28125.48826-1.76953 0l-7.499998-7.5c-.488282-.48828-.488282-1.281249 0-1.76953.488281-.488281 1.281248-.488281 1.769528 0L8.75293 6.9834 15.3701.370117c.4883-.488282 1.2813-.488282 1.7695 0 .4883.488281.4883 1.281253 0 1.769533l-7.49995 7.5-.00391-.00391Z"
+            ></path>
+          </svg>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  #hero {
+    position: relative;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 1080px;
+    transition: $transition;
+    .content-cont {
+      .cont {
+        width: 40%;
+        margin-right: auto;
+        section {
+          background-color: $pure-white;
+          padding: 5%;
+          border-radius: 30px 30px 0 0;
+        }
+        p {
+          margin-top: 20px;
+          font-size: $font-p-regular;
+        }
+        a {
+          font-size: $font-p-regular;
+          color: $pure-white;
+          width: 100%;
+          height: 100px;
+          transition: $transition;
+          border-radius: 0 0 30px 30px;
+          .arrow {
+            transition: $transition;
+            height: 25px;
+            width: 25px;
+          }
+          div {
+            transition: $transition;
+            p {
+              text-shadow: 1px 1px 5px #00000069;
+            }
+          }
+          &:hover {
+            filter: saturate(90%);
+            outline: solid 4px $champagne;
+            .flex {
+              transform: scale(1.1);
+              .arrow {
+                rotate: 360deg;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1600px) {
+    #hero {
+      height: 700px;
+    }
+  }
+
+  @media (max-width: 1250px) {
+    #hero {
+      background-position-x: 60%;
+      background-color: $cornell-red;
+      background-position-y: 0;
+      .content-cont {
+        .cont {
+          width: 100%;
+        }
+      }
+    }
+  }
+  @media (max-width: 850px) {
+    #hero {
+      background-position-x: 80%;
+    }
+    .content-cont {
+      .cont {
+        section {
+          p {
+            font-size: $font-p-small;
+          }
+        }
+      }
+    }
+  }
+</style>

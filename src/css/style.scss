@@ -1,0 +1,362 @@
+// Import Hind Madurai font weights
+@font-face {
+  font-family: "Hind Madurai";
+  font-weight: 300; // Light
+  src: url("/src/assets/fonts/HindMadurai-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Hind Madurai";
+  font-weight: 400; // Regular
+  src: url("/src/assets/fonts/HindMadurai-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Hind Madurai";
+  font-weight: 500; // Medium
+  src: url("/src/assets/fonts/HindMadurai-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Hind Madurai";
+  font-weight: 600; // SemiBold
+  src: url("/src/assets/fonts/HindMadurai-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Hind Madurai";
+  font-weight: 700; // Bold
+  src: url("/src/assets/fonts/HindMadurai-Bold.ttf") format("truetype");
+}
+
+// Import Palanquin font weights
+@font-face {
+  font-family: "Palanquin";
+  font-weight: 200; // ExtraLight
+  src: url("/src/assets/fonts/Palanquin-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Palanquin";
+  font-weight: 300; // Light
+  src: url("/src/assets/fonts/Palanquin-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Palanquin";
+  font-weight: 400; // Regular
+  src: url("/src/assets/fonts/Palanquin-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Palanquin";
+  font-weight: 500; // Medium
+  src: url("/src/assets/fonts/Palanquin-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Palanquin";
+  font-weight: 600; // SemiBold
+  src: url("/src/assets/fonts/Palanquin-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Palanquin";
+  font-weight: 700; // Bold
+  src: url("/src/assets/fonts/Palanquin-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Palanquin";
+  font-weight: 100; // Thin
+  src: url("/src/assets/fonts/Palanquin-Thin.ttf") format("truetype");
+}
+/* */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: auto;
+}
+
+main {
+  margin: 0 auto;
+  min-height: 99vh;
+  max-width: 1920px;
+  position: relative;
+  min-width: 350px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  outline: double 15px transparent;
+  border-radius: 1px;
+  transition: all 0.4s;
+}
+h1,
+h2,
+h3,
+h4,
+details,
+summary {
+  font-family: "Palanquin";
+}
+p,
+a,
+li,
+span {
+  font-family: "Hind Madurai";
+}
+
+/* Variables */
+/* */
+$champagne: #fcedd8;
+$denim: #0073c3;
+$cornell-red: #ce3d2a;
+$davys-gray: #4e4e4e;
+$pure-white: #fff;
+$platinum: #eaeaea;
+$eerie-black: #171717;
+// Variables for light theme
+$light-champagne: #fcedd8;
+$light-denim: #0073c3;
+$light-cornell-red: #ce3d2a;
+$light-davys-gray: #4e4e4e;
+$light-pure-white: #fff;
+$light-platinum: #eaeaea;
+$light-eerie-black: #171717;
+
+// Variables for dark theme
+$dark-champagne: #3e3d2e;
+$dark-denim: #0057a3;
+$dark-cornell-red: #8b2a20;
+$dark-davys-gray: #a0a0a0;
+$dark-pure-white: #2e2e2e;
+$dark-platinum: #5a5a5a;
+$dark-eerie-black: #f1f1f1;
+/**/
+@mixin light-theme {
+  $champagne: $light-champagne;
+  $denim: $light-denim;
+  $cornell-red: $light-cornell-red;
+  $davys-gray: $light-davys-gray;
+  $pure-white: $light-pure-white;
+  $platinum: $light-platinum;
+  $eerie-black: $light-eerie-black;
+}
+
+@mixin dark-theme {
+  $champagne: $dark-champagne;
+  $denim: $dark-denim;
+  $cornell-red: $dark-cornell-red;
+  $davys-gray: $dark-davys-gray;
+  $pure-white: $dark-pure-white;
+  $platinum: $dark-platinum;
+  $eerie-black: $dark-eerie-black;
+}
+:root {
+  @include light-theme;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    @include dark-theme;
+  }
+}
+/* Gradients */
+
+.blue-sunrise {
+  background: $denim;
+  background: -moz-linear-gradient(48deg, $denim 0%, $champagne 100%);
+  background: -webkit-linear-gradient(48deg, $denim 0%, $champagne 100%);
+  background: linear-gradient(48deg, $denim 0%, $champagne 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$denim",endColorstr="$champagne",GradientType=1);
+}
+
+.red-sunset {
+  background: $cornell-red;
+  background: -moz-linear-gradient(90deg, $cornell-red 0%, $champagne 100%);
+  background: -webkit-linear-gradient(90deg, $cornell-red 0%, $champagne 100%);
+  background: linear-gradient(90deg, $cornell-red 0%, $champagne 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$cornell-red",endColorstr="$champagne",GradientType=1);
+}
+
+.bg-bgA {
+  background: $eerie-black;
+  background: -moz-linear-gradient(90deg, $eerie-black 0%, $eerie-black 100%);
+  background: -webkit-linear-gradient(
+    90deg,
+    $eerie-black 0%,
+    $eerie-black 100%
+  );
+  background: linear-gradient(90deg, $eerie-black 0%, $eerie-black 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="$eerie-black",endColorstr="$eerie-black",GradientType=1);
+}
+
+/* Box */
+$box-shadow: -5px 5px 10px #00000025;
+$box-shadow-inset: inside -5px 5px 10px #00000025;
+$box-shadow-inset-bot: inset 0px -5px 10px #0000003b;
+$box-shadow-blue: -5px 5px 10px #0073c325;
+$box-shadow-top: 0px 0px 20px #000000a5;
+$box-border-section: 30px;
+$box-border-element: 10px;
+$transition: all 0.3s cubic-bezier(0.67, 0.19, 0.58, 1);
+/* Fonts */
+$font-h1: 44px;
+$font-h2: 32px;
+$font-h3: 28px;
+$font-p-hero: 22px;
+$font-p-regular: 16px;
+$font-p-small: 14px;
+$font-weight-light: 200;
+$font-weight-regular: 400;
+$font-weight-bold: 700;
+/**/
+/* Fonts */
+$font-mobile-h1: 28px;
+$font-mobile-h2: 24px;
+$font-mobile-h3: 20px;
+$font-mobile-p-hero: 18px;
+$font-mobile-p-regular: 14px;
+$font-mobile-p-small: 12px;
+
+/**/
+h1 {
+  font-size: $font-h1;
+  font-weight: $font-weight-bold;
+}
+h2 {
+  font-size: $font-h2;
+  font-weight: $font-weight-regular;
+}
+h3 {
+  font-size: $font-h3;
+  font-weight: $font-weight-regular;
+}
+h4 {
+  font-size: $font-p-hero;
+  font-weight: $font-weight-regular;
+}
+.p-hero {
+  font-size: $font-p-hero;
+}
+p {
+  font-size: $font-p-regular;
+  letter-spacing: 0.5pt;
+  font-weight: $font-weight-light;
+}
+.p-small {
+  font-size: $font-p-small;
+}
+
+/* Global classes for DRY Code optimering*/
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-direction: column;
+}
+
+.row {
+  flex-direction: row;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.align {
+  justify-content: center;
+  align-items: center;
+}
+.content-cont {
+  width: 75%;
+  margin: 0 auto;
+  max-width: 1440px;
+  transition: $transition;
+}
+.full-width {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+
+}
+.main-relative {
+  position: relative;
+  top: -200px;
+  row-gap: 50px;
+}
+@media (min-width: 1921px) {
+  .main-relative {
+    top: 0px !important;
+  }
+}
+@media (max-width: 1600px) {
+  .main-relative {
+    top: -100px !important;
+  }
+}
+
+@media (max-width: 1500px) {
+  .content-cont {
+    width: 80%;
+  }
+  .main-relative {
+    top: -100px !important;
+  }
+}
+@media (max-width: 1250px) {
+  .content-cont {
+    width: 80%;
+  }
+  .main-relative {
+    top: -150px !important;
+  }
+}
+@media (max-width: 850px) {
+  .content-cont {
+    width: 90%;
+  }
+  .main-relative {
+    top: -100px !important;
+  }
+  h4{
+    font-size: $font-mobile-p-regular;
+  }
+}
+/**/
+// --------------------------
+@media (max-width: 1250px) {
+  h1 {
+    font-size: $font-mobile-h1;
+  }
+  h2 {
+    font-size: $font-mobile-h2;
+  }
+  h3 {
+    font-size: $font-mobile-h3;
+  }
+  .p-hero {
+    font-size: $font-mobile-p-hero;
+  }
+  p {
+    font-size: $font-mobile-p-regular;
+    letter-spacing: 0.5pt;
+  }
+  .p-small {
+    font-size: $font-p-small;
+  }
+}

@@ -1,0 +1,34 @@
+---
+interface Props<Y> {
+  p: string;
+  href: Y;
+}
+
+const { p, href } = Astro.props;
+---
+
+<a href={href} class="flex align" aria-label={p} title=`Gå til ${p}`>
+  <p>{p}</p>
+</a>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  a {
+    width: 160px;
+    height: 50px;
+    border-radius: $box-border-element;
+    background-color: $denim;
+    color: $pure-white;
+    cursor: pointer;
+    outline: double 25px transparent;
+    &:hover {
+      outline: solid 5px $pure-white;
+      background-color: $denim;
+      box-shadow: $box-shadow;
+      &:active {
+        background-color: $eerie-black;
+      }
+    }
+  }
+</style>

@@ -1,0 +1,178 @@
+---
+// GENERAL
+import { Picture } from "astro:assets";
+// VUE
+import AabningComp from "../VUE/AabningComp.vue";
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import img5 from "../../assets/img/wellness/img5_dji_0176_3353.jpg";
+---
+
+<div class="full-width flex row">
+  <div class="flex column cont">
+    <div class="wrapper flex">
+      <div class="txt-cont">
+        <section>
+          <h2>Retningslinjer for deltagelse</h2>
+          <ul class="flex column">
+            <li>
+              Man skal medbringe et stort håndklæde til at sidde på, som kan
+              dække både fødder og ryg.
+            </li>
+            <li>Det er forbudt at hælde vand udover sig selv i saunaen.</li>
+            <li>
+              Man skal for så vidt muligt holde sin plads under hele guset.
+            </li>
+            <li>
+              Efter hvert gus skal man tage sit håndklæde med ud af saunaen
+            </li>
+            <li>
+              Vores livredder må til enhver tid afvise gæster eller aflyse guset
+              såfremt, at retningslinjerne ikke overholdes.
+            </li>
+          </ul>
+        </section>
+      </div>
+      <div class="img-cont">
+        <Picture
+          class="img"
+          src={img5}
+          alt="Skansens udendørs wellness-afdeling taget oppefra"
+        />
+      </div>
+    </div>
+    <div class="sauna-cont flex column">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="sauna-line">
+        <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="sauna-line">
+        <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="sauna-line">
+        <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" class="sauna-line">
+        <path fill="#FCEDD8" d="M.5 0h1680v31H.5z"></path>
+      </svg>
+    </div>
+  </div>
+  <div class="aabning">
+    <AabningComp client:only="vue" />
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  .full-width {
+    .cont {
+      width: 60%;
+      .wrapper {
+        margin-left: 21%;
+        width: 100%;
+        .txt-cont {
+          margin-left: auto;
+          padding: 10px;
+          background-color: $champagne;
+          max-width: 550px;
+          border-radius: 30px 0 0 0;
+          box-shadow: $box-shadow-inset-bot;
+          section {
+            padding: 25px;
+            ul {
+              list-style: inside disc;
+              padding: 5px;
+              row-gap: 20px;
+              li {
+              }
+            }
+          }
+        }
+        .img-cont {
+          max-width: 550px;
+          min-width: 33%;
+          .img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+    }
+    .sauna-cont {
+      row-gap: 10px;
+      width: 120%;
+      .sauna-line {
+        width: 100%;
+        height: 30px;
+        path {
+          width: inherit;
+        }
+      }
+    }
+    .aabning {
+      border: solid 5px $pure-white;
+      border-radius: 30px;
+      padding: 10px;
+      background-color: $denim;
+      margin-left: 120px;
+    }
+  }
+  @media (max-width: 1250px) {
+    .full-width {
+      .cont {
+        width: 60%;
+        .wrapper {
+          flex-direction: column;
+          margin: 0;
+          padding-left: 10%;
+          .txt-cont {
+            padding: 10px;
+            max-width: none;
+          }
+          .img-cont {
+            max-width: none;
+            .img {
+            }
+          }
+        }
+      }
+      .sauna-cont {
+        width: 100%;
+      }
+      .aabning {
+        margin: 0;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .full-width {
+      flex-direction: column;
+      .cont {
+        width: 100%;
+        padding: 5%;
+        .wrapper {
+          flex-direction: column;
+          margin: 0;
+          padding-left: 0;
+          width: 100%;
+          .txt-cont {
+            max-width: none;
+            border-radius: 10px 10px 0 0;
+          }
+          .img-cont {
+            max-width: none;
+            .img {
+            }
+          }
+        }
+      }
+      .aabning {
+        margin: 0 10% 0 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+</style>

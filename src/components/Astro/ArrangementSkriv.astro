@@ -1,0 +1,195 @@
+---
+
+---
+
+<div id="arrangement" class="full-width">
+  <!--  -->
+  <div class="flex row arrangement content-cont align">
+    <!--  -->
+    <div class="arrangement-txt flex">
+      <section class="flex column">
+        <p>
+          Uanset om I er til vovede eventyr, sjove konkurrencer,
+          teambuilding-aktiviteter eller forkælelse og afslapning, kan I stole
+          på, at vi leverer en uforglemmelig oplevelse. Vi lægger stor vægt på
+          detaljerne og skaber en atmosfære af fest, samhørighed og glæde.
+        </p>
+        <p>
+          Så uanset om du er til vandaktiviteter eller foretrækker de tørre
+          aktiviteter, er der noget for enhver smag og aldersgruppe. Dyk ned i
+          vores store 50-meter bassin og nyd en forfriskende svømmetur eller leg
+          i vores børneafdeling, hvor sjove rutsjebaner og legetøj venter på de
+          små. Hvis afslapning er i fokus, kan du udforske vores lækre
+          wellness-område, hvor saunaer, gus og varmt vand vil forkæle dine
+          sanser.
+        </p>
+        <p>
+          Men det stopper ikke der! For dem, der foretrækker tørre aktiviteter,
+          tilbyder vi en række spændende muligheder. Udfordr dine venner til en
+          omgang padel, sus gennem luften på vores svævebane, udforsk vores
+          haller, deltag i fede fitnesshold, eller tag en tur på vores
+          minigolfbane. Mulighederne er næsten uendelige!
+        </p>
+        <p>
+          Kontakt vores erfarne team, og lad os hjælpe jer med at skabe den
+          perfekte oplevelse, der vil imponere alle.
+        </p>
+        <p>
+          Velkommen til en verden af uforglemmelige begivenheder og enestående
+          øjeblikke!
+        </p>
+      </section>
+    </div>
+    <!--  -->
+    <div class="arrangementForm flexcontent-cont">
+      <form class="flex column">
+        <h2>Skriv til os</h2>
+        <form class="flex align">
+          <div class="flex row media-row">
+            <div class="flex column">
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Navn..."
+                class="formField"
+                required
+              />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email..."
+                class="formField"
+                required
+              />
+            </div>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Hvilket arrangement ønsker I at afholde?"
+              class="formField"
+              required></textarea>
+          </div>
+
+          <button type="submit">Send forespørgsel</button>
+        </form>
+      </form>
+      <!--  -->
+    </div>
+  </div>
+</div>
+<style lang="scss">
+  @import "../../css/style.scss";
+  /*  FORM CONT */
+  #arrangement {
+    padding: 25px;
+    margin: 50px 0 50px 0;
+    background-color: $cornell-red;
+    .arrangement {
+      width: 100%;
+      .arrangement-txt {
+        max-width: 790px;
+        margin-right: auto;
+        section {
+          padding: 30px;
+          row-gap: 25px;
+          background-color: $champagne;
+          border-radius: 30px 30px 0 0;
+          max-width: 1200px;
+        }
+      }
+      .arrangementForm {
+        width: 100%;
+        height: 100%;
+        padding: 25px;
+        form {
+          background-color: $pure-white;
+          width: 100%;
+          max-width: 750px;
+          border-radius: 5px;
+          padding: 25px;
+          h2 {
+            background-color: $cornell-red;
+            color: $pure-white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: $box-border-element;
+          }
+          div {
+            gap: 25px;
+          }
+          .formField {
+            border-radius: 5px;
+            padding: 15px;
+            background-color: $platinum;
+            box-shadow: inset -1px 0 4px 0 #00000025;
+            border: transparent;
+            resize: none;
+          }
+          textarea {
+            width: 100%;
+          }
+          button {
+            margin-top: 15px;
+            width: 160px;
+            height: 50px;
+            border-radius: $box-border-element;
+            background-color: $denim;
+            color: $pure-white;
+            cursor: pointer;
+            border: transparent;
+            outline: double 25px transparent;
+            transition: $transition;
+
+            &:hover {
+              outline: solid 5px $champagne;
+              background-color: $denim;
+            }
+            &:active {
+              background-color: $eerie-black;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 1000px) {
+    .media-row {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 850px) {
+    #arrangement {
+      .arrangement {
+        width: 100%;
+        flex-direction: column;
+        .arrangement-txt {
+          section {
+            border-radius: 0;
+          }
+        }
+        .arrangementForm {
+          width: 60%;
+          margin: 0;
+          form {
+            margin: 0;
+            textarea {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    #arrangement {
+      .arrangement {
+        .arrangementForm {
+          width: 100%;
+        }
+      }
+    }
+  }
+</style>

@@ -1,0 +1,97 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+import TheHeader from "../components/Astro/TheHeader.astro";
+import TheFooter from "../components/Astro/TheFooter.astro";
+import NavigateFurther from "../components/Astro/NavigateFurther.astro";
+import ButtonIntern from "../components/Astro/ButtonIntern.astro";
+// IMG SOURCE = Oplevskansen.dk
+import error404 from "../assets/img/error404.png";
+---
+
+<Layout
+  title="Skansen ERROR 404"
+  description="Ups! Siden kunne ikke findes. Besøg vores hjemmeside for at finde de oplysninger, du søger. Kontakt os, hvis du har brug for hjælp"
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="none"
+    svomBg="none"
+    cafeBg="none"
+    eventBg="none"
+    opholdBg="none"
+    omBg="none"
+    fhDDBg="none"
+    shDDBg="none"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+  <main class="flex column">
+    <div class="full-width flex row wrap align" id="hero">
+      <div class="img-cont">
+        <Picture src={error404} alt="teksten 404 i farver" class="img" />
+      </div>
+      <section class="flex column">
+        <h1>HOV! Der skete en fejl 404</h1>
+        <p>Der skete en fejl med vores side... Vi arbejder på sagen.</p>
+        <p>
+          <p>
+            Vi beklager ulejligheden. Det kan være, at siden er blevet fjernet,
+            flyttet eller aldrig har eksisteret i første omgang. Måske kan du
+            prøve at navigere tilbage til startsiden. Hvis du stadig føler dig
+            tabt, så kontakt os gerne, så hjælper vi med at rette kursen.
+          </p>
+        </p>
+        <div class="flex row">
+          <ButtonIntern href="/om-skansen#kontakt" p="Kontakt" />
+          <ButtonIntern href="/" p="Forside" />
+        </div>
+      </section>
+
+      <div class="navigate-further"><NavigateFurther /></div>
+    </div>
+
+    <TheFooter />
+  </main>
+
+  <style lang="scss">
+    @import "../css/style.scss";
+    main {
+      min-height: 99vh;
+      #hero {
+        gap: 25px;
+        .img-cont {
+          max-width: 700px;
+          width: 100%;
+          height: auto;
+          .img {
+            width: 100%;
+            object-fit: contain;
+            object-position: center;
+          }
+        }
+        section {
+          outline: solid 8px $denim;
+          border: solid 4px $cornell-red;
+          padding: 50px;
+          margin: 25px;
+          row-gap: 25px;
+          width: 100%;
+          max-width: 700px;
+          background-color: $champagne;
+          border-radius: $box-border-section;
+          p {
+            max-width: 600px;
+          }
+          .flex {
+            gap: 25px;
+          }
+        }
+      }
+    }
+  </style>
+</Layout>

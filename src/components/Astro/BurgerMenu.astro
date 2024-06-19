@@ -1,0 +1,250 @@
+---
+
+---
+
+<div class="cont flex row align">
+  <div class="overlay-left"></div>
+  <nav class="flex column" aria-label="Main Navigation">
+    <ul class="flex column align">
+      <li><a href="/" title="Gå til forsiden (hjem)">Forside</a></li>
+      <li>
+        <details>
+          <summary class="flex"
+            >Fitness
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+              class="arrow"
+            >
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+              ></path>
+            </svg>
+          </summary>
+          <ul class="drop-down">
+            <li>
+              <a href="/fitness" title="Gå til Skansen Fitness siden">Fitness</a
+              >
+            </li>
+            <li>
+              <a href="/fitness/hold" title="Gå til Skansen Holdbeskrivelser"
+                >Hold</a
+              >
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary class="flex"
+            >Svømmehal
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+              class="arrow"
+            >
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+              ></path>
+            </svg>
+          </summary>
+          <ul class="drop-down">
+            <li>
+              <a href="/svoemmehal" title="Gå til Skansen Svømmehal"
+                >Svømmehal</a
+              >
+            </li>
+            <li>
+              <a
+                href="/svoemmehal/wellness-relax"
+                title="Gå til Skansen Wellness & Relax">Wellness & Relax</a
+              >
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <a href="/cafeteria" title="Gå til Skansen Cafeteria side">Cafeteria</a>
+      </li>
+      <li>
+        <a
+          href="/event-arrangement"
+          title="Gå til Skansen Event & arrangementer">Event & Arrangement</a
+        >
+      </li>
+      <li>
+        <a href="/ophold" title="Gå til Skansen Ophold">Ophold</a>
+      </li>
+      <li>
+        <details>
+          <summary class="flex"
+            >Om Skansen <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+              class="arrow"
+            >
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+              ></path>
+            </svg></summary
+          >
+          <ul class="drop-down">
+            <li>
+              <a href="/om-skansen" title="Gå til Om Skansen">Om Skansen</a>
+            </li>
+            <li>
+              <a href="/om-skansen/erhverv" title="Gå til Skansens Erhvervsside"
+                >Erhverv</a
+              >
+            </li>
+            <li>
+              <a
+                href="/om-skansen/GDPR"
+                title="Gå til siden om GDPR hos Skansen">GDPR</a
+              >
+            </li>
+            <li>
+              <a
+                href="/om-skansen/job-hos-os"
+                title="Gå til Skansens Job og ledige stillinger">Job Hos Os</a
+              >
+            </li>
+            <li>
+              <a
+                href="/om-skansen/om-virksomheden"
+                title="Gå til om virksomheden">Om Virksomheden</a
+              >
+            </li>
+            <li>
+              <a
+                href="/om-skansen/salgsbetingelser"
+                title="Gå til salgsbetingelser">Salgsbetingelser</a
+              >
+            </li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+  </nav>
+</div>
+<style lang="scss">
+  @import "../../css/style.scss";
+  .cont {
+    transition: $transition;
+    z-index: 89;
+    min-width: 100%;
+    max-width: 1250px;
+    max-width: 1250px;
+    overflow-x: hidden;
+    height: -webkit-fit-content;
+    position: absolute;
+    right: 0;
+    top: 75px;
+    backdrop-filter: blur(4px);
+
+    .overlay-left {
+      width: 60%;
+    }
+    nav {
+      z-index: 99;
+      box-shadow: $box-shadow;
+      width: 40%;
+      height: -webkit-fit-content;
+      column-gap: 5%;
+      height: 100%;
+      &::after {
+        content: "";
+        width: 100%;
+        height: 50px;
+        background-color: $denim;
+      }
+      details {
+        transition: $transition;
+        cursor: pointer;
+        summary {
+          font-family: "Hind Madurai";
+
+          list-style-type: none;
+          padding: 10px;
+          width: 50%;
+          .arrow {
+            width: 8px;
+            fill: white;
+            margin-left: auto;
+            transition: $transition;
+          }
+          &:hover {
+            border-bottom: 5px solid $champagne;
+            .arrow {
+            }
+          }
+        }
+        &[open] {
+          summary {
+            .arrow {
+              rotate: 90deg;
+            }
+          }
+        }
+      }
+      ul {
+        height: inherit;
+        transition: $transition;
+        width: 100%;
+        &:first-child {
+          padding-top: 35px;
+        }
+        li {
+          justify-content: center;
+          transition: $transition;
+          color: $pure-white;
+          width: 100%;
+
+          background-color: $denim;
+
+          a {
+            display: flex;
+            transition: $transition;
+
+            padding: 10px;
+            width: 100%;
+            min-width: 35vw;
+            &:link,
+            &:visited {
+              color: inherit;
+            }
+            &:hover {
+              background-color: $champagne;
+              color: $eerie-black;
+            }
+          }
+        }
+        .drop-down {
+          margin-top: 5px;
+          width: 100%;
+          background-color: $cornell-red;
+          li {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            &::before {
+              content: "";
+              background-color: $champagne;
+              width: 50px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .cont {
+      .overlay-left {
+        width: 20%;
+      }
+      nav {
+        width: 100%;
+      }
+    }
+  }
+</style>

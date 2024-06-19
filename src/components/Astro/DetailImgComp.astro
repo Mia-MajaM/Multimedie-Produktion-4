@@ -1,0 +1,111 @@
+---
+interface Props<Y> {
+  h3: string;
+  p1: string;
+  p2: string;
+  image: Y;
+  imageAlt: string;
+}
+
+const { h3, p1, p2, image, imageAlt } = Astro.props;
+
+import { Picture } from "astro:assets";
+---
+
+<details class="flex" aria-label={h3}>
+  <summary
+    class="flex row"
+    aria-expanded="false"
+    aria-controls="details-content"
+  >
+    <h3>{h3}</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" class="arrow" viewBox="0 0 18 10">
+      <path
+        d="M9.63574 9.63574c-.48828.48826-1.28125.48826-1.76953 0l-7.499998-7.5c-.488282-.48828-.488282-1.281249 0-1.76953.488281-.488281 1.281248-.488281 1.769528 0L8.75293 6.9834 15.3701.370117c.4883-.488282 1.2813-.488282 1.7695 0 .4883.488281.4883 1.281253 0 1.769533l-7.49995 7.5-.00391-.00391Z"
+      ></path>
+    </svg>
+  </summary>
+  <div id="details-content" class="flex row" aria-hidden="true">
+    <section class="flex column">
+      <p>{p1}</p>
+      <p>{p2}</p>
+    </section>
+    <div class="right">
+      <Picture src={image} alt={imageAlt} class="image" />
+    </div>
+  </div>
+</details>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  details {
+    background-color: $champagne;
+    box-shadow: $box-shadow;
+    width: 50%;
+    max-width: 900px;
+    min-width: 325px;
+    overflow: hidden;
+    transition: $transition;
+
+    outline: double 30px transparent;
+    cursor: pointer;
+    &:hover {
+      outline: solid 5px $pure-white;
+      border-radius: $box-border-element;
+    }
+    summary {
+      list-style: none;
+      align-items: center;
+      width: 100%;
+      padding: 2%;
+
+      .arrow {
+        margin-left: auto;
+        width: 15px;
+        rotate: 270deg;
+      }
+    }
+    #details-content {
+      padding: 3%;
+      section {
+        width: 50%;
+        p {
+          padding: 2%;
+        }
+      }
+      .right {
+        width: 50%;
+        .image {
+          width: 100%;
+          height: 100%;
+          margin: 3%;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+  }
+
+  details[open] {
+    // Max-height bruges til animationen, den skal være større end det content der åbnes, derfor sat til 2000px
+    max-height: 2000px;
+    .arrow {
+      transform: rotate(90deg);
+    }
+  }
+
+  @media (max-width: 1250px) {
+    details {
+      #details-content {
+        flex-direction: column;
+        section {
+          width: 100%;
+        }
+        .right {
+          width: 95%;
+        }
+      }
+    }
+  }
+</style>

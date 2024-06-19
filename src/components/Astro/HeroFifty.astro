@@ -1,0 +1,63 @@
+---
+import { Picture } from "astro:assets";
+interface Props<Y> {
+  image: Y;
+  p2: string;
+  p1: string;
+  h1: string;
+}
+
+const { image, h1, p1, p2 } = Astro.props;
+---
+
+<div class="full-width flex row">
+  <div class="cont flex align">
+    <section>
+      <h1>{h1}</h1>
+      <p>{p1}</p>
+      <p>{p2}</p>
+    </section>
+  </div>
+  <div class="hero-img">
+    <Picture src={image} alt="Skansens hovedindgang" class="img" />
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  .full-width {
+    .cont {
+      width: 50%;
+      box-shadow: $box-shadow;
+      section {
+        margin: 10%;
+        p {
+          margin-top: 2%;
+        }
+      }
+    }
+    .hero-img {
+      width: 50%;
+      max-height: 900px;
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  @media (max-width: 800px) {
+    .full-width {
+      flex-direction: column-reverse;
+      margin-bottom: 25px;
+      .cont {
+        width: 100%;
+      }
+      .hero-img {
+        width: 100%;
+        height: 250px;
+      }
+    }
+  }
+</style>

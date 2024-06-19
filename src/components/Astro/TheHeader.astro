@@ -1,0 +1,450 @@
+---
+import { Picture } from "astro:assets";
+// Astro
+import BurgerMenu from "../Astro/BurgerMenu.astro";
+
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import SkansenLogo from "../../assets/img/skansen-logo_4964.png";
+
+interface Props {
+  indexBg: string;
+  fitBg: string;
+  svomBg: string;
+  cafeBg: string;
+  eventBg: string;
+  opholdBg: string;
+  omBg: string;
+  fhDDBg: string;
+  weDDBg: string;
+  shDDBg: string;
+  erDDBg: string;
+  gdDDBg: string;
+  joDDBg: string;
+  viDDBg: string;
+  saDDBg: string;
+}
+
+const {
+  indexBg,
+  fitBg,
+  svomBg,
+  cafeBg,
+  eventBg,
+  opholdBg,
+  omBg,
+  fhDDBg,
+  weDDBg,
+  gdDDBg,
+  joDDBg,
+  saDDBg,
+  shDDBg,
+  viDDBg,
+  erDDBg,
+} = Astro.props;
+---
+
+<header class="flex row" role="banner" aria-label="Header">
+  <div class="header-cont flex row align">
+    <a href="/" class="header_logo flex align" title="Gå til forsiden (hjem)">
+      <Picture src={SkansenLogo} alt="Skansen Logo" format="webp" class="img" />
+    </a>
+
+    <nav class="flex row" aria-label="Main Navigation">
+      <ul class="flex row align">
+        <li>
+          <a href="/" title="Gå til forsiden (hjem)">Forside</a>
+          <div class="under" style={`background-color:${indexBg};`}></div>
+        </li>
+        <li>
+          <a href="/fitness" title="Gå til Skansen Fitness siden"
+            >Fitness <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+              class="arrow"
+            >
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+              ></path>
+            </svg></a
+          >
+          <div class="under" style={`background-color:${fitBg};`}></div>
+          <ul class="drop-down">
+            <li>
+              <div class="dd-before" style={`background-color:${fhDDBg};`}>
+              </div>
+              <a href="/fitness/hold" title="Gå til Skansen Holdbeskrivelser"
+                >Hold</a
+              ><div class="under"></div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/svoemmehal" title="Gå til Skansen Svømmehal"
+            >Svømmehal <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+              class="arrow"
+            >
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+              ></path>
+            </svg></a
+          >
+          <div class="under" style={`background-color:${svomBg};`}></div>
+          <ul class="drop-down">
+            <li>
+              <div class="dd-before" style={`background-color:${weDDBg};`}>
+              </div>
+              <a
+                href="/svoemmehal/wellness-relax"
+                title="Gå til Skansen Wellness & Relax">Wellness & Relax</a
+              ><div class="under"></div>
+            </li>
+            <li>
+              <div class="dd-before" style={`background-color:${shDDBg};`}>
+              </div>
+              <a href="/svoemmehal/hold" title="Gå til Skansen Holdbeskrivelser"
+                >Hold</a
+              ><div class="under"></div>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="/cafeteria" title="Gå til Skansen Cafeteria side"
+            >Cafeteria</a
+          ><div class="under" style={`background-color:${cafeBg};`}></div>
+        </li>
+        <li>
+          <a
+            href="/event-arrangement"
+            title="Gå til Skansen Event & arrangementer">Event & Arrangement</a
+          ><div class="under" style={`background-color:${eventBg};`}></div>
+        </li>
+        <li>
+          <a href="/ophold" title="Gå til Skansen Ophold">Ophold</a>
+          <div class="under" style={`background-color:${opholdBg};`}></div>
+        </li>
+        <li>
+          <a href="/om-skansen" title="Gå til Om Skansen"
+            >Om Skansen <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 320 512"
+              class="arrow"
+            >
+              <path
+                d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+              ></path>
+            </svg></a
+          >
+          <div class="under" style={`background-color:${omBg};`}></div>
+          <ul class="drop-down">
+            <li class="flex row">
+              <div class="dd-before" style={`background-color:${erDDBg};`}>
+              </div>
+              <a href="/om-skansen/erhverv" title="Gå til Skansens Erhvervsside"
+                >Erhverv</a
+              ><div class="under"></div>
+            </li>
+            <li>
+              <div class="dd-before" style={`background-color:${gdDDBg};`}>
+              </div>
+              <a
+                href="/om-skansen/GDPR"
+                title="Gå til siden om GDPR hos Skansen">GDPR</a
+              ><div class="under"></div>
+            </li>
+            <li>
+              <div class="dd-before" style={`background-color:${joDDBg};`}>
+              </div>
+              <a
+                href="/om-skansen/job-hos-os"
+                title="Gå til Skansens Job og ledige stillinger">Job Hos Os</a
+              ><div class="under"></div>
+            </li>
+            <li>
+              <div class="dd-before" style={`background-color:${viDDBg};`}>
+              </div>
+              <a
+                href="/om-skansen/om-virksomheden"
+                title="Gå til om virksomheden">Om Virksomheden</a
+              ><div class="under"></div>
+            </li>
+            <li>
+              <div class="dd-before" style={`background-color:${saDDBg};`}>
+              </div>
+              <a
+                href="/om-skansen/salgsbetingelser"
+                title="Gå til salgsbetingelser">Salgsbetingelser</a
+              ><div class="under"></div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+    <div
+      id="burger-icon"
+      class="burger-icon"
+      role="button"
+      aria-label="Toggle Menu"
+    >
+      <input type="checkbox" id="burgerToggle" class="burger-toggle" />
+      <label for="burgerToggle" class="burger-menu">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 30 40"
+          class="flex column align"
+        >
+          <line
+            x1="5"
+            y1="10"
+            x2="25"
+            y2="10"
+            stroke-linecap="round"
+            stroke-width="3"
+            class="line1"></line>
+          <line
+            x1="5"
+            y1="20"
+            x2="25"
+            y2="20"
+            stroke-width="3"
+            stroke-linecap="round"
+            class="line2"></line>
+          <line
+            x1="5"
+            y1="30"
+            x2="25"
+            y2="30"
+            stroke-linecap="round"
+            stroke-width="3"
+            class="line3"></line>
+        </svg>
+        <div class="burger-menu-toggl">
+          <BurgerMenu />
+        </div>
+      </label>
+    </div>
+  </div>
+</header>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  header {
+    border-radius: 0 0px 5px 5px;
+    width: 100%;
+    min-width: 350px;
+    background-color: $pure-white;
+    box-shadow: $box-shadow;
+    max-height: 120px;
+    min-height: 75px;
+    z-index: 90;
+    position: sticky;
+    top: 0;
+
+    .header-cont {
+      width: 100%;
+      max-width: 1920px;
+      margin: 0 auto;
+      padding: 0 25px 0 25px;
+
+      .header_logo {
+        padding: 1%;
+        outline: double 15px transparent;
+        border-radius: 10px;
+        transition: $transition;
+        &:hover {
+          outline: solid $eerie-black;
+        }
+        .img {
+          width: 150px;
+          height: auto;
+        }
+      }
+      .cog {
+        filter: invert(1);
+      }
+      nav {
+        column-gap: 5%;
+        margin-left: auto;
+        height: 100%;
+
+        * {
+          transition: $transition;
+        }
+        ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          height: inherit;
+
+          li {
+            position: relative;
+            height: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 100px;
+            transition: all 0.3s;
+
+            a {
+              width: 100%;
+              height: 100%;
+              padding: 20px;
+              height: inherit;
+              text-decoration: none;
+              color: inherit;
+              display: flex;
+              align-items: center;
+              transition: $transition;
+              .arrow {
+                width: 10px;
+                height: 10px;
+                rotate: 90deg;
+                margin-left: 8px;
+                margin-right: -5px;
+              }
+              &:hover {
+                background-color: $denim;
+                color: $pure-white;
+                .arrow {
+                  fill: $pure-white;
+                }
+              }
+              &:active {
+                box-shadow: inset $box-shadow;
+              }
+            }
+            .under {
+              width: 100%;
+              height: 10px;
+              position: absolute;
+              bottom: 0;
+            }
+            &:hover {
+              .drop-down {
+                display: flex;
+              }
+            }
+
+            .drop-down {
+              display: none;
+              position: absolute;
+              top: 100%;
+              left: 0;
+              height: -webkit-fit-content;
+              flex-direction: column;
+              background-color: $pure-white;
+              box-shadow: $box-shadow;
+              transition: all 0.2s;
+              z-index: 91;
+              li {
+                min-width: 150px;
+                position: relative;
+                .dd-before {
+                  width: 10px;
+                  height: 50px;
+                  position: absolute;
+                  top: 1;
+                  left: 0;
+                }
+
+                a {
+                  padding: 20px;
+                  border-radius: 0;
+                  &:hover {
+                    display: flex;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .burger-icon {
+      display: none;
+    }
+  }
+  @media (min-width: 1251px) {
+    #burger-icon {
+      display: none;
+    }
+  }
+  @media (max-width: 1250px) {
+    .header_logo {
+      margin-right: auto;
+    }
+
+    .burger-icon {
+      display: block !important;
+      transition: $transition;
+
+      #burgerToggle {
+        display: none;
+        transition: $transition;
+
+        &:checked + .burger-menu .line1 {
+          transform: rotate(45deg) translate(11px, -7px);
+        }
+
+        &:checked + .burger-menu .line2 {
+          transform: rotate(-45deg) translate(-18px, 6px);
+        }
+
+        &:checked + .burger-menu .line3 {
+          stroke: transparent !important;
+        }
+
+        &:checked + .burger-menu .burger-menu-toggl {
+          opacity: 1;
+          transform: translateY(0);
+          pointer-events: auto;
+          visibility: visible;
+        }
+      }
+      .burger-menu-toggl {
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-100%);
+        transition:
+          opacity 0.5s ease,
+          transform 0.5s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: $pure-white;
+        box-shadow: $box-shadow;
+        z-index: -10;
+      }
+
+      svg {
+        cursor: pointer;
+        padding: 2%;
+        transition: $transition;
+        outline: double 25px transparent;
+
+        .line1,
+        .line2,
+        .line3 {
+          transition: $transition;
+          stroke: $eerie-black;
+        }
+
+        &:hover {
+          background-color: $champagne;
+          outline: solid 2px $eerie-black;
+          border-radius: $box-border-element;
+        }
+      }
+    }
+
+    nav {
+      display: none !important;
+    }
+  }
+</style>

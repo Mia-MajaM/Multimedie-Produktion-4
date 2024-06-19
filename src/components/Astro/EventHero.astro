@@ -1,0 +1,73 @@
+---
+interface Props {
+  background: string;
+}
+
+const { background } = Astro.props;
+---
+
+<div class="flex column full-width">
+  <div
+    class="full-width flex align"
+    id="hero"
+    style={`background-image: url(${background})`}
+  >
+    <div class="content-cont">
+      <section class="hero-txt flex column">
+        <h1>Arrangementer i Skansen</h1>
+        <p>Hold dit næste arrangement hos Skansen</p>
+        <p>
+          Fra actionfyldte aktiviteter og adrenalinfyldte udfordringer til
+          afslappende og luksuriøse oplevelser tilbyder vi et bredt udvalg af
+          skræddersyede pakker, der passer til jeres ønsker og behov. Vores
+          dedikerede team af arrangører vil sørge for, at hvert øjeblik er
+          planlagt til perfektion og lever op til jeres forventninger.
+        </p>
+      </section>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  #hero {
+    position: relative;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position-y: 2px;
+    background-size: cover;
+    height: 500px;
+    transition: $transition;
+    overflow-x: hidden;
+    .content-cont {
+      .hero-txt {
+        background-color: $champagne;
+        padding: 25px;
+        max-width: 600px;
+        border-radius: $box-border-element;
+        outline: solid 10px $pure-white;
+        p {
+          &:nth-child(2) {
+            font-size: $font-p-small;
+          }
+          &:nth-child(3) {
+            margin-top: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 850px) {
+    #hero {
+      background-position-x: 0;
+    }
+  }
+  @media (max-width: 700px) {
+    #hero {
+      background-position-x: 0;
+    }
+  }
+</style>

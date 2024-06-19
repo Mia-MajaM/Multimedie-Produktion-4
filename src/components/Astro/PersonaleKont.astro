@@ -1,0 +1,47 @@
+---
+interface Props {
+  h3: string;
+  p: string;
+  tlf: string;
+  email: string;
+}
+const { h3, p, email, tlf } = Astro.props;
+---
+
+<section class="flex column">
+  <h3 class="flex align">{h3}</h3>
+  <p>
+    {p}
+    <a href=`mailto:${email}` title="Åben dit foretrukne mail program">
+      {email}</a
+    ><a href=`tel:${tlf}` title=`Ring til Skansen på ${tlf}`> {tlf}</a>
+  </p>
+</section>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  section {
+    max-width: 370px;
+    min-width: 340px;
+    h3 {
+      min-height: 110px;
+      background-color: $champagne;
+      text-align: center;
+      width: 80%;
+      padding: 15px;
+      box-shadow: $box-shadow;
+      align-self: center;
+      position: relative;
+      top: 30px;
+      font-size: $font-p-hero;
+    }
+    p {
+      padding: 60px 25px 35px 25px;
+      outline: solid 1px $denim;
+      a {
+        text-decoration: underline;
+        color: inherit;
+      }
+    }
+  }
+</style>

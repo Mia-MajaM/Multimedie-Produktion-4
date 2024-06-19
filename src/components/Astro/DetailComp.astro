@@ -1,0 +1,94 @@
+---
+interface Props {
+  h3: string;
+  p: string;
+  p2: string;
+  p3: string;
+  p4: string;
+}
+
+const { h3, p, p2, p3, p4 } = Astro.props;
+---
+
+<details class="flex" aria-label={h3}>
+  <summary
+    class="flex row"
+    title="Åben dropdown for mere information"
+    aria-expanded="false"
+    aria-controls="details-content"
+  >
+    <h3>{h3}</h3>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="arrow">
+      <path
+        d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+      ></path>
+    </svg>
+  </summary>
+  <div id="details-content" aria-hidden="true">
+    <p>{p}</p>
+    <p>{p2}</p>
+    <p>{p3}</p>
+    <p>{p4}</p>
+  </div>
+</details>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  .arrow {
+    transition: all 0.5s;
+    width: 20px;
+    height: 20px;
+    fill: $eerie-black;
+  }
+  details {
+    margin: 0 auto;
+    background-color: $champagne;
+    box-shadow: $box-shadow;
+    width: 100%;
+    max-width: 700px;
+    max-height: 5em;
+    overflow: hidden;
+    cursor: pointer;
+    transition: $transition;
+    outline: solid 30px transparent;
+    &:hover {
+      outline: solid 5px $pure-white;
+      border-radius: $box-border-element;
+    }
+
+    summary {
+      list-style: none;
+      align-items: center;
+      width: 100%;
+      padding: 10px;
+      .arrow {
+        margin-left: auto;
+        width: 15px;
+      }
+
+      &:hover {
+        box-shadow: $box-shadow-blue;
+      }
+    }
+    p {
+      padding: 3%;
+    }
+  }
+
+  details[open] {
+    // Max-height bruges til animationen, den skal være større end det content der åbnes, derfor sat til 2000px
+    max-height: 2000px;
+    .arrow {
+      transform: rotate(90deg);
+    }
+  }
+  @media (max-width: 450px) {
+    details {
+      summary {
+        h3 {
+          font-size: $font-p-regular;
+        }
+      }
+    }
+  }
+</style>

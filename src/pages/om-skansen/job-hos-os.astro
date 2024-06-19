@@ -1,0 +1,180 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+import TheHeader from "../../components/Astro/TheHeader.astro";
+import TheFooter from "../../components/Astro/TheFooter.astro";
+import PersonaleKont from "../../components/Astro/PersonaleKont.astro";
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import Img1 from "../../assets/img/jobhosos/img1.png";
+import BackTopComp from "../../components/Astro/BackTopComp.astro";
+import NavigateFurther from "../../components/Astro/NavigateFurther.astro";
+---
+
+<Layout
+  title="Skansen ⎮ Job Hos Skansen"
+  description="Søg job hos os og bliv en del af vores team. Vi tilbyder gode arbejdsforhold og personlig udvikling. Se vores ledige stillinger og ansøg i dag!"
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="none"
+    svomBg="none"
+    cafeBg="none"
+    eventBg="none"
+    opholdBg="none"
+    omBg="#0073c3"
+    fhDDBg="none"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="#0073c3"
+    saDDBg="none"
+    shDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+  <main>
+    <div class="flex row media-row align cont">
+      <!--  -->
+      <div class="flex column txt-wrap">
+        <section id="hero" class="content-cont">
+          <h1>Er du interesseret i et job hos Skansen</h1>
+          <p>
+            Grundet GDPR-reglerne må vi kun gemme ansøgninger pr. mail såfremt,
+            at I giver samstykke til dette i den fremsendte mail.
+          </p>
+        </section>
+        <div class="full-width blue">
+          <div class="content-cont flex column">
+            <p>
+              Vi søger med jævne mellemrum nye kollegaer til vores dejlige
+              center. Opslåede stillinger vil fremgå herunder.
+            </p>
+            <p>
+              Vi søger løbende afløsere til vandaerobic og babysvømning - send
+              gerne en ansøgning til os på info@oplevskansen.dk.
+            </p>
+            <p>
+              Du er altid velkommen til at sende en uopfordret ansøgning til en
+              af vores afdelinger.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <div class="img-cont flex align">
+        <Picture
+          src={Img1}
+          alt="Fællesbillede af Skansens ansatte"
+          class="img"
+        />
+      </div>
+    </div>
+    <!-- TOP Cont END -->
+    <div id="personer">
+      <div class="content-cont">
+        <section class="content-cont">
+          <h2>Du kan se de ansvarlige for hvert område herunder</h2>
+          <p>Vi ser frem til at modtage din ansøgning.</p>
+          <p>
+            Har du spørgsmål vedrørende Skansen? Kontakt venligst:
+            <a
+              href="mailto:info@oplevskansen.dk"
+              title="Åben dit foretrukne mail program"
+            >
+              info@oplevskansen.dk</a
+            > eller Telefon:<a
+              href="tel:+45 98174366"
+              title="Ring til Skansen på +45 98174366"
+            >
+              +45 98 17 43 66</a
+            >
+          </p>
+        </section>
+      </div>
+      <div class="full-width">
+        <div class="flex align row wrap per-cont">
+          <PersonaleKont
+            email="cok@oplevskansen.dk"
+            h3="Job som livredder i Svømmehallen"
+            p="Send dit CV samt ansøgning til Casper Østergaard på:"
+            tlf=" "
+          />
+          <PersonaleKont
+            h3="Job i rengøringen til vores værelsesafdeling"
+            p="Send dit CV samt ansøgning til Kasper Holt på:"
+            email="kh@oplevskansen.dk"
+            tlf=" "
+          />
+          <PersonaleKont
+            h3="Job i Skansen Café"
+            p="Send dit CV samt ansøgning til Svend Erik Lautrup på:"
+            email="sel@oplevskansen.dk"
+            tlf=" "
+          />
+        </div>
+      </div>
+    </div>
+    <NavigateFurther />
+    <BackTopComp href="#hero" />
+  </main>
+  <TheFooter />
+</Layout>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  main {
+    padding-bottom: 50px;
+  }
+  .cont {
+    margin-top: 70px;
+    .txt-wrap {
+      row-gap: 25px;
+    }
+    .blue {
+      background-color: $denim;
+      padding: 20px;
+      color: $pure-white;
+    }
+    .img-cont {
+      width: 100%;
+      height: 100%;
+      max-height: 400px;
+      max-width: 400px;
+      margin-top: 10px;
+      .img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+  }
+  #personer {
+    margin-top: 50px;
+    h2 {
+    }
+    p {
+      a {
+        text-decoration: underline;
+        color: inherit;
+      }
+    }
+    .per-cont {
+      gap: 20px;
+    }
+  }
+
+  @media (max-width: 850px) {
+    .media-column {
+      flex-direction: row;
+    }
+    .media-row {
+      flex-direction: column;
+    }
+    .cont {
+      .img-cont {
+        padding: 10px;
+      }
+    }
+  }
+</style>

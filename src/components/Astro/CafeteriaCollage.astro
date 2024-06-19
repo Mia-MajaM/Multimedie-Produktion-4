@@ -1,0 +1,100 @@
+---
+interface Props<Y> {
+  img1: Y;
+  imgAlt1: string;
+  img2: Y;
+  imgAlt2: string;
+  img3: Y;
+  imgAlt3: string;
+  img4: Y;
+  imgAlt4: string;
+  img5: Y;
+  imgAlt5: string;
+  img6: Y;
+  imgAlt6: string;
+}
+
+const {
+  img1,
+  imgAlt1,
+  img2,
+  imgAlt2,
+  img3,
+  imgAlt3,
+  img4,
+  imgAlt4,
+  img5,
+  imgAlt5,
+  img6,
+  imgAlt6,
+} = Astro.props;
+
+import { Picture } from "astro:assets";
+---
+
+<div class="flex wrap">
+  <div class="img-cont">
+    <Picture src={img1} alt={imgAlt1} class="image imageLong" />
+  </div>
+  <div class="img-cont">
+    <Picture src={img2} alt={imgAlt2} class="image" />
+  </div>
+  <div class="img-cont">
+    <Picture src={img3} alt={imgAlt3} class="image" />
+  </div>
+  <div class="img-cont">
+    <Picture src={img4} alt={imgAlt4} class="image" />
+  </div>
+  <div class="img-cont">
+    <Picture src={img5} alt={imgAlt5} class="image" />
+  </div>
+  <div class="img-cont">
+    <Picture src={img6} alt={imgAlt6} class="image imageLong" />
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  div {
+    max-width: 1100px;
+    margin: 5% auto;
+    .img-cont {
+      max-width: 100%;
+      .image {
+        width: 250px;
+        height: 250px;
+        margin: 7px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .imageLong {
+        width: 514px;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    div {
+      justify-content: center;
+      .image {
+        width: 150px;
+        height: 150px;
+      }
+      .imageLong {
+        width: 414px;
+      }
+    }
+  }
+  @media (max-width: 550px) {
+    div {
+      margin: 0 auto;
+      .img-cont {
+        .image {
+          width: 100%;
+        }
+        .imageLong {
+          max-width: 340px;
+        }
+      }
+    }
+  }
+</style>

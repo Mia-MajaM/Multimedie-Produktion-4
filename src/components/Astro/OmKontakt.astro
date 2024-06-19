@@ -1,0 +1,183 @@
+---
+// GENERAL
+import { Picture } from "astro:assets";
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import Skansen from "../../assets/img/skansen-logo_4964.png";
+---
+
+<div class="full-width flex align">
+  <div class="flex row wrapper align wrap">
+    <div class="left flex column align">
+      <div class="img-cont">
+        <Picture src={Skansen} alt="Skansens logo" class="img" />
+      </div>
+      <section class="flex column" id="Skansen-Information">
+        <h3>Har du spørgsmål</h3>
+        <p>
+          Har du spørgsmål kan du skrive en mail til os eller give os et kald på
+          telefonen.
+        </p>
+        <p>
+          Telefon:<a
+            class="a-style"
+            href="tel:+45 98174366"
+            title="Ring til Skansen på +45 98174366"
+          >
+            <strong>+45 98 17 43 66</strong></a
+          >
+        </p><p>
+          E-mail: <a
+            class="a-style"
+            href="mailto:info@oplevskansen.dk"
+            title="Åben dit foretrukne mail program">info@oplevskansen.dk</a
+          >
+        </p>
+        <p>
+          Lerumbakken 11, 9400 Nørresundby <a
+            class="a-style"
+            target="_blank"
+            href="https://maps.app.goo.gl/28zfL1ZWc6mGwpZ39"
+            title="Åben vejvisning hos Google">Find Vej</a
+          >
+        </p>
+        <p>CVR: 32189512</p>
+      </section>
+    </div>
+    <div class="mid">
+      <form class="flex column align">
+        <p>
+          Har du spørgsmål vedrørende nogle af vores produkter, er du velkommen
+          til at henvende dig via formularen.
+        </p>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Navn"
+          class="formField"
+          required
+        />
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          class="formField"
+          required
+        />
+        <textarea
+          id="message"
+          name="message"
+          rows="4"
+          style="resize: none;"
+          draggable="false"
+          placeholder="Skriv din besked her..."
+          class="formField"
+          required></textarea>
+        <button type="submit">Send forespørgsel</button>
+      </form>
+    </div>
+    <div class="right flex row">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1084.6201885296468!2d9.9342941!3d57.0645371!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4649329c9be05ff1%3A0x9a1e3fa5b398ed29!2sSKANSEN%20-%20N%C3%B8rresundby!5e0!3m2!1sen!2sdk!4v1717413925771!5m2!1sen!2sdk"
+        class="map"
+        style="border:0; border-radius: 30px 30px 0 0 ;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+  .full-width {
+    background-color: $champagne;
+    padding: 20px 0 20px 0;
+
+    .wrapper {
+      width: 100%;
+      gap: 25px;
+      border-radius: 30px;
+      .left,
+      .right,
+      .mid {
+        background-color: $pure-white;
+        border-radius: 30px;
+        padding: 2%;
+        width: 33%;
+        min-width: 350px;
+        max-width: 500px;
+        min-height: 500px;
+        max-height: 550px;
+      }
+      .left {
+        .img-cont {
+          max-width: 180px;
+          height: -webkit-fit-content;
+          margin-bottom: 25px;
+          .img {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        section {
+          padding: 2%;
+          row-gap: 35px;
+        }
+      }
+      .mid {
+        form {
+          background-color: $champagne;
+          border-radius: 30px;
+          padding: 25px;
+          height: inherit;
+          p {
+            width: 90%;
+            margin-bottom: 10px;
+          }
+          .formField {
+            border-radius: 5px;
+            margin: 15px;
+            padding: 15px;
+            color: $davys-gray;
+            background-color: $platinum;
+            box-shadow: inset -1px 0 4px 0 #00000025;
+            border: transparent;
+            width: 80%;
+          }
+
+          button {
+            margin-top: 15px;
+            width: 160px;
+            height: 50px;
+            border-radius: $box-border-element;
+            background-color: $denim;
+            border: transparent;
+            color: $pure-white;
+            cursor: pointer;
+            outline: double 25px transparent;
+            transition: $transition;
+
+            &:hover {
+              outline: solid 5px $pure-white;
+              background-color: #005d9e; // skal tilføjes til scss
+            }
+
+            &:active {
+              background-color: $eerie-black;
+            }
+          }
+        }
+      }
+      .right {
+        column-gap: 25px;
+        .map {
+          width: 100%;
+          height: inherit;
+        }
+      }
+    }
+  }
+</style>

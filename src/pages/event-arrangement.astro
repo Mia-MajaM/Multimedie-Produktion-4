@@ -1,0 +1,118 @@
+---
+// GENERAL
+import Layout from "../layouts/Layout.astro";
+// ASTRO
+import NavigateFurther from "../components/Astro/NavigateFurther.astro";
+import TheHeader from "../components/Astro/TheHeader.astro";
+import TheFooter from "../components/Astro/TheFooter.astro";
+import ButtonEkstern from "../components/Astro/ButtonEkstern.astro";
+import ArrangementSkriv from "../components/Astro/ArrangementSkriv.astro";
+// VUE
+import EventComp from "../components/VUE/EventComp.vue";
+import EventBarComp from "../components/VUE/EventBarComp.vue";
+import FiftyHero from "../components/VUE/FiftyHero.vue";
+import BackTopComp from "../components/Astro/BackTopComp.astro";
+---
+
+<Layout
+  title="Skansen ⎮ Event & Arrangement"
+  description="Opdag vores spændende udvalg af events og arrangementer! Fra temaaftener til børneaktiviteter, wellnessweekender og sportsevents, vi har noget for enhver smag. Hold øje med vores kalender eller book dit næste event allerede i dag"
+>
+  <TheHeader
+    indexBg="none"
+    fitBg="none"
+    svomBg="none"
+    cafeBg="none"
+    eventBg="#0073c3"
+    opholdBg="none"
+    omBg="none"
+    fhDDBg="none"
+    shDDBg="none"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+  <main>
+    <div id="hero">
+      <!-- IMG SOURCE = Gruppe 5 -->
+      <FiftyHero client:only="vue" />
+    </div>
+
+    <EventBarComp client:only="vue" class="EventBarComp">
+      <ButtonEkstern
+        link="https://v3.onlinebooking.dk/shop/v3norresunshop"
+        ptxt="Se alle events"
+      />
+    </EventBarComp>
+
+    <div id="eventkalender" class="content-cont">
+      <!-- IMG SOURCE = Gruppe 5 -->
+      <!-- IMG SOURCE = Gruppe 5 -->
+      <section class="flex column">
+        <p>
+          Hos os finder du en bred vifte af events. Vi afholder regelmæssigt
+          fede events både internt og i samarbejde med eksterne partnere.
+        </p>
+        <p>
+          Vores events spænder bredt fra både temaaftener, børneaktiviteter,
+          wellnessweekender og sportsevents.
+        </p>
+        <p>
+          Hold øje med vores kalender, eller book dit næste event allerede i
+          dag.
+        </p>
+      </section>
+    </div>
+
+    <EventComp client:only="vue">
+      <ButtonEkstern
+        link="https://v3.onlinebooking.dk/shop/v3norresunshop"
+        ptxt="Se alle events"
+      />
+    </EventComp>
+    <ArrangementSkriv />
+    <NavigateFurther />
+    <BackTopComp href="#hero" />
+  </main>
+  <TheFooter />
+</Layout>
+
+<style lang="scss">
+  @import "../css/style.scss";
+
+  #eventkalender {
+    padding: 25px 0 75px 0;
+    margin: 0 auto;
+    width: 50%;
+    background-image: url(../assets/img/event/grafik_event_02.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    section {
+      width: 60%;
+      padding: 45px;
+      row-gap: 25px;
+      border-radius: $box-border-section;
+      box-shadow: $box-shadow;
+    }
+    @media (max-width: 950px) {
+      width: 100%;
+      background-image: url(../assets/img/event/lollipop_img.png);
+      background-size: 30%;
+      background-position: right;
+      section {
+        width: 60%;
+      }
+    }
+    @media (max-width: 530px) {
+      background-image: none;
+      padding: 25px 0px;
+      section {
+        width: 100%;
+      }
+    }
+  }
+</style>

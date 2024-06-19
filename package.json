@@ -1,0 +1,23 @@
+{
+  "name": "mmd4skansen",
+  "type": "module",
+  "version": "0.9",
+  "homepage": "https://github.com/mvP4R4/Skansen-mmd4",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/cloudflare": "^10.2.6",
+    "@astrojs/vue": "^4.3.0",
+    "astro": "^4.9.2",
+    "sass": "^1.77.3",
+    "sharp": "^0.33.4",
+    "typescript": "^5.4.5",
+    "vue": "^3.4.27"
+  }
+}

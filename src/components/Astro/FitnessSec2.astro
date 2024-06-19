@@ -1,0 +1,186 @@
+---
+import { Picture } from "astro:assets";
+// IMG
+// IMG SOURCE = Gruppe 5
+import Img1 from "../../assets/img/fitness/collage-billede1.png";
+// IMG SOURCE = Oplevskansen.dk
+import Img2 from "../../assets/img/fitness/collage-billede2.webp";
+// IMG SOURCE = Oplevskansen.dk
+import Img3 from "../../assets/img/fitness/collage-billede3.png";
+// IMG SOURCE = Oplevskansen.dk
+import Img4 from "../../assets/img/fitness/collage-billede4.png";
+// IMG SOURCE = Gruppe 5
+import Img5 from "../../assets/img/fitness/collage-billede5.png";
+---
+
+<div class="content-cont flex row align">
+  <div class="flex column left">
+    <Picture
+      src={Img1}
+      alt="Bænkområde i fitness med plads til at løfte vægte"
+      format="webp"
+      class="img-small img"
+    />
+    <Picture
+      src={Img2}
+      alt="Stort fitnesslokale med træningsmaskiner for enhver smag "
+      format="webp"
+      class="img-big img"
+    />
+  </div>
+  <a
+    href="/fitness/hold"
+    class="flex column align mid"
+    title="Gå til Fitness Hold"
+  >
+    <h2>Holdbeskrivelser</h2>
+    <Picture
+      src={Img3}
+      alt="Siluet af en person, der laver strækøvelse"
+      format="webp"
+      class="a-img img"
+    />
+  </a>
+  <div class="flex column right">
+    <Picture
+      src={Img5}
+      alt="Cirkeltræningsområde i forlængelse af det store fitnesslokale"
+      format="webp"
+      class="img-big img"
+    />
+    <Picture
+      src={Img4}
+      alt="Vægte med få til mange kilo"
+      format="webp"
+      class="img-small img"
+    />
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  .content-cont {
+    padding: 1%;
+    background: $pure-white;
+    position: relative;
+    margin: 0 auto;
+    border-radius: $box-border-section;
+    column-gap: 25px;
+    max-height: 850px;
+    .left,
+    .mid,
+    .right {
+      width: 33.33%;
+    }
+    div {
+      row-gap: 25px;
+    }
+    a {
+      border-radius: $box-border-element;
+      background-color: $cornell-red;
+      max-width: 400px;
+      height: inherit;
+      max-height: 820px;
+      position: relative;
+      overflow-y: hidden;
+      overflow-x: hidden;
+      outline: double 100px transparent;
+      filter: saturate(30%) brightness(50%);
+      h2 {
+        position: absolute;
+        z-index: 4;
+        color: $pure-white;
+        font-weight: 900;
+        top: 28%;
+        margin: 5%;
+        transition: $transition;
+        letter-spacing: 1.2pt;
+      }
+      .a-img {
+        transition: $transition;
+        object-position: right;
+        object-fit: contain;
+        opacity: 1;
+      }
+      &:hover {
+        filter: saturate(1) brightness(1);
+        outline: solid 5px $platinum;
+        .a-img {
+          filter: saturate(1) brightness(1);
+          transform: scale(1.1);
+        }
+
+        h2 {
+          background-color: $denim;
+          padding: 2%;
+          z-index: 3;
+          box-shadow: $box-shadow-top;
+        }
+      }
+    }
+    .img {
+      border-radius: $box-border-section;
+      width: 100%;
+      min-width: 300px;
+      max-height: 100%;
+      min-height: 100%;
+      object-fit: cover;
+      margin: auto;
+    }
+    .img-small {
+      max-height: 250px;
+    }
+    .img-big {
+      height: 550px;
+    }
+  }
+  @media (max-width: 1250px) {
+    .content-cont {
+      flex-wrap: wrap;
+      height: -webkit-fit-content;
+      max-height: -webkit-fit-content;
+      .left {
+        flex-direction: row;
+        margin-bottom: 20px;
+      }
+      .mid {
+        margin: 20px auto 40px auto;
+        width: 100%;
+      }
+      .right {
+        width: 61%;
+      }
+      .left,
+      .mid,
+      .right {
+        width: 100%;
+        gap: 20px;
+      }
+      .img-small {
+        max-height: none;
+      }
+    }
+  }
+  @media (max-width: 700px) {
+    .content-cont {
+      row-gap: 25px;
+      .left {
+        flex-direction: column;
+      }
+      .mid {
+        width: 80%;
+      }
+    }
+  }
+  @media (max-width: 500px) {
+    .content-cont {
+      .img-small,
+      .img-big {
+        height: 200px;
+        width: 100%;
+        border: solid 5px $pure-white;
+      }
+    }
+  }
+</style>

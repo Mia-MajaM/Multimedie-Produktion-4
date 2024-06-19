@@ -1,0 +1,78 @@
+---
+interface Props<Y> {
+  ptxt: string;
+  link: Y;
+}
+
+const { ptxt, link } = Astro.props;
+---
+
+<a
+  class="flex row"
+  href={link}
+  aria-label={ptxt}
+  target="_blank"
+  title="Åben i ny fane"
+>
+  <p>{ptxt}</p>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 320 512"
+    class="arrow"
+    aria-hidden="true"
+  >
+    <path
+      d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"
+    ></path>
+  </svg>
+</a>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  a {
+    border: transparent;
+    border-radius: $box-border-element;
+    transition: $transition;
+    background-color: $cornell-red;
+    color: $pure-white;
+    font-size: 1.5rem;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px 20px;
+    max-height: 70px;
+    min-height: 50px;
+    max-width: 175px;
+    height: 55px;
+    outline: double 25px transparent;
+
+    &:hover {
+      filter: saturate(110%);
+      box-shadow: $box-shadow;
+      outline: solid 5px $pure-white;
+      p {
+      }
+      .arrow {
+        transform: rotate(360deg);
+      }
+    }
+
+    &:active {
+      background-color: $eerie-black;
+    }
+  }
+
+  @media (max-width: 1025px) {
+    a {
+      height: -webkit-fit-content;
+    }
+  }
+
+  .arrow {
+    transition: $transition;
+    margin-left: auto;
+    width: 20px;
+    height: 20px;
+    fill: white;
+  }
+</style>

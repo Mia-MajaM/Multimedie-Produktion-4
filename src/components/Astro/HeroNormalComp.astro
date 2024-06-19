@@ -1,0 +1,49 @@
+---
+import { Picture } from "astro:assets";
+
+interface Props<Y> {
+  image: Y;
+  h1: string;
+  p1: string;
+}
+
+const { image, h1, p1 } = Astro.props;
+---
+
+<div class="cont">
+  <Picture
+    src={image}
+    alt="Udendørs siddeområde ved Skansens Café"
+    class="img"
+  />
+  <div class="overlay">
+    <h1>{h1}</h1>
+    <p>{p1}</p>
+  </div>
+</div>
+
+<style lang="scss">
+  @import "../../css/style.scss";
+
+  .cont {
+    position: relative;
+    display: inline-block;
+    .img {
+      max-width: 100%;
+      height: 500px;
+      object-fit: cover;
+      display: block;
+    }
+    .overlay {
+      background-color: $pure-white;
+      position: absolute;
+      top: 27%;
+      right: 60%;
+      left: 10%;
+      padding: 30px;
+      border-radius: $box-border-element;
+      box-shadow: $box-shadow-top;
+      height: 250px;
+    }
+  }
+</style>

@@ -1,0 +1,315 @@
+---
+// GENERAL
+import Layout from "../layouts/Layout.astro";
+import { Picture } from "astro:assets";
+import TheHeader from "../components/Astro/TheHeader.astro";
+import TheFooter from "../components/Astro/TheFooter.astro";
+// Astro
+import NavigateFurther from "../components/Astro/NavigateFurther.astro";
+import ButtonEkstern from "../components/Astro/ButtonEkstern.astro";
+import ButtonIntern from "../components/Astro/ButtonIntern.astro";
+import BackTopComp from "../components/Astro/BackTopComp.astro";
+// VUE
+import HeroIndex from "../components/VUE/HeroIndex.vue";
+import AabningComp from "../components/VUE/AabningComp.vue";
+import EventBarComp from "../components/VUE/EventBarComp.vue";
+// IMG
+// IMG SOURCE = Oplevskansen.dk
+import img1 from "../assets/img/index/image1.png";
+// IMG SOURCE = Oplevskansen.dk
+import img2 from "../assets/img/index/image2.png";
+// IMG SOURCE = Oplevskansen.dk
+import img3 from "../assets/img/index/image3.png";
+// IMG SOURCE = Oplevskansen.dk
+import img4 from "../assets/img/index/image4.png";
+// IMG SOURCE = Oplevskansen.dk
+import img5 from "../assets/img/skansen-hero.png";
+// IMG SOURCE = Oplevskansen.dk
+import forening1 from "../assets/img/index/forening1.png";
+// IMG SOURCE = Oplevskansen.dk
+import forening2 from "../assets/img/index/forening2.png";
+// IMG SOURCE = Oplevskansen.dk
+import forening3 from "../assets/img/index/forening3.png";
+// IMG SOURCE = Oplevskansen.dk
+import forening4 from "../assets/img/index/forening4.png";
+// IMG SOURCE = Oplevskansen.dk
+import forening5 from "../assets/img/index/forening5.png";
+// IMG SOURCE = Oplevskansen.dk
+import forening6 from "../assets/img/index/forening6.png";
+---
+
+<Layout
+  title="Skansen"
+  description="Velkommen til Skansen i Nørresundby! Udforsk vores brede udvalg af faciliteter, herunder svømmehal, fitnesscenter, café, hostel og kursuslokaler. Oplev vores dedikation til sundhed, velvære og fællesskab. Book dit næste besøg i dag!"
+>
+  <TheHeader
+    indexBg="#0073c3"
+    fitBg="none"
+    svomBg="none"
+    cafeBg="none"
+    eventBg="none"
+    opholdBg="none"
+    omBg="none"
+    fhDDBg="none"
+    shDDBg="none"
+    weDDBg="none"
+    gdDDBg="none"
+    joDDBg="none"
+    saDDBg="none"
+    viDDBg="none"
+    erDDBg="none"
+  />
+  <main class="flex column">
+    <div class="full-width" id="heroIndex">
+      <!-- // IMG SOURCE = Gruppe 5 -->
+      <HeroIndex client:only="vue" />
+    </div>
+    <div class="full-width flex column align" id="aabning">
+      <div class="content-cont flex column wrap">
+        <h2>Åbningstider</h2>
+      </div>
+      <AabningComp client:only="vue" />
+    </div>
+    <div class="full-width" id="eventbar">
+      <EventBarComp client:only="vue" class="EventBarComp">
+        <ButtonEkstern
+          link="https://v3.onlinebooking.dk/shop/v3norresunshop"
+          ptxt="Se alle events"
+        />
+      </EventBarComp>
+    </div>
+    <div class="content-cont flex wrap align" id="danhostel">
+      <section class="flex column sec3-element">
+        <h2>Danhostel Nørresundby</h2>
+        <p>
+          Danhostel Nørresundby tilbyder 29 værelser med mulighed for én til
+          flere overnatninger. Alle værelser har eget bad/toilet og alle vores
+          værelser er udstyret med bord, stole og TV. Under opholdet tilbyder
+          centeret fri benyttelse af aktiviteter som bordtennis, bordfodbold og
+          TV-stue. Som overnattende gæst er der en daglig fri adgang til bad,
+          wellness, og fitness, inden for den offentlige åbningstid.
+        </p>
+        <ButtonEkstern
+          ptxt="Danhostel"
+          link="https://www.danhostel.dk/hostel/danhostel-noerresundby"
+        />
+      </section>
+      <div class="img-cont sec3-element">
+        <Picture
+          src={img1}
+          alt="billede af to mennesker der spiller bordtennis"
+        />
+      </div>
+      <div class="img-cont sec3-element">
+        <Picture
+          src={img2}
+          alt="billede af fem mennesker der spiller bordfodbold"
+        />
+      </div>
+      <div class="sec3-element flex row">
+        <div class="img-cont">
+          <Picture src={img3} alt="billede danhostel værelse med spisebord" />
+        </div>
+        <div class="img-cont">
+          <Picture src={img4} alt="billede af danhosten seng med køje" />
+        </div>
+      </div>
+    </div>
+    <div class="full-width" id="oplevskansen">
+      <div class="content-cont flex wrap align">
+        <div class="img-cont element">
+          <Picture
+            src={img5}
+            alt="Billede af Skansens bygning facade"
+            class="img"
+          />
+        </div>
+        <section class="flex column element">
+          <h2>Hvem er vi?</h2>
+          <p>
+            Skansen er et stort idrætscenter med Svømmehal, Wellness, Padel,
+            fitness og motion. Skal du svømme baner har vi Aalborgs eneste
+            50-meterbassin. Skal du opleve vores lækre wellness med saunagus har
+            vi byens absolut største gusprogram. Og endeligt har vi et
+            splinternyt fitnesscenter med masser af hold. Der er også mulighed
+            for fitness, padel, mountainbike, bungee fitness og meget mere.
+            Derudover har vi også minigolf.
+          </p>
+          <p>
+            Vi har to store haller og huser 12 klubber. Vi tilbyder mulighed for
+            afvikling af konferencer, kurser og træningsophold med eller uden
+            overnatning og bespisning.
+          </p>
+          <ButtonIntern href="/om-skansen" p="Om Skansen" />
+        </section>
+      </div>
+    </div>
+    <div class="full-width flex column align" id="foreninger">
+      <h2>Klubber i Skansen</h2>
+      <div class="cont flex row wrap align">
+        <a
+          href="http://www.xn--nrresundbyfb-vjb.dk/"
+          target="_blank"
+          class="img-cont"
+        >
+          <Picture
+            class="img"
+            src={forening1}
+            alt="Logo for en af Skansens foreninger"
+          />
+        </a>
+        <a
+          href="https://www.facebook.com/photo/?fbid=268291775302232&set=a.268291715302238"
+          target="_blank"
+          class="img-cont"
+        >
+          <Picture
+            class="img"
+            src={forening2}
+            alt="Logo for en af Skansens foreninger"
+          />
+        </a>
+        <a href="https://vkshima.dk/" target="_blank" class="img-cont">
+          <Picture
+            class="img"
+            src={forening3}
+            alt="Logo for en af Skansens foreninger"
+          />
+        </a>
+        <a
+          href="https://www.aalborgfirmaidraet.dk/"
+          target="_blank"
+          class="img-cont"
+        >
+          <Picture
+            class="img"
+            src={forening4}
+            alt="Logo for en af Skansens foreninger"
+          />
+        </a>
+        <a
+          href="https://www.svommeklubbennord.dk/"
+          target="_blank"
+          class="img-cont"
+        >
+          <Picture
+            class="img"
+            src={forening5}
+            alt="Logo for en af Skansens foreninger"
+          />
+        </a>
+        <a href="https://www.ehaalborg.dk/" target="_blank" class="img-cont">
+          <Picture
+            class="img"
+            src={forening6}
+            alt="Logo for en af Skansens foreninger"
+          />
+        </a>
+      </div>
+      <ButtonIntern p="Se alle Klubber" href="/om-skansen#klubber" />
+    </div>
+    <div class="navigateFurther">
+      <NavigateFurther />
+    </div>
+    <BackTopComp href="#heroIndex" />
+  </main>
+  <TheFooter />
+</Layout>
+
+<style lang="scss">
+  @import "../css/style.scss";
+  main {
+    background-color: $champagne;
+    #hero {
+    }
+    #aabning {
+      margin-top: 50px;
+      background-color: $pure-white;
+      padding: 20px 0 50px 0;
+      .content-cont {
+        h2 {
+          border-bottom: solid 2px $eerie-black;
+          margin-bottom: 25px;
+          width: 250px;
+        }
+      }
+    }
+
+    #danhostel {
+      padding: 50px 0;
+      gap: 25px;
+      background-color: $pure-white;
+      .sec3-element {
+        max-width: 600px;
+      }
+      .flex {
+        gap: 25px;
+      }
+      section {
+        padding: 25px;
+      }
+      .img-cont {
+        width: 100%;
+        margin-bottom: 20px;
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+    }
+    #oplevskansen {
+      background-color: $pure-white;
+      .content-cont {
+        .element {
+          max-width: 700px;
+        }
+        .img-cont {
+          padding: 25px;
+          .img {
+            height: auto;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+        section {
+          padding: 25px;
+          row-gap: 25px;
+          align-self: center;
+        }
+        @media (max-width: 1890px) {
+          flex-direction: column-reverse;
+        }
+      }
+    }
+    #foreninger {
+      padding: 50px 0 50px 0;
+
+      background-color: $pure-white;
+      h2 {
+        width: 75%;
+        text-align: center;
+        max-width: 350px;
+        border-bottom: solid 1px;
+      }
+      .cont {
+        gap: 25px;
+        padding: 25px;
+        .img-cont {
+          padding: 25px;
+          .img {
+            height: auto;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+      }
+    }
+    .navigateFurther {
+      margin-top: auto;
+    }
+  }
+</style>
